@@ -1,0 +1,228 @@
+html, body {
+/*	margin: 0;*/
+	height: 100%;
+	position: relative;
+}
+
+body {
+	min-height: 100%;
+/*	overflow-y: hidden;*/
+}
+
+#sunlight {
+/*			margin: auto;*/
+	height: 50%;
+/*	width: 250px;*/
+	vertical-align: middle;
+	display: inline-block;
+	margin-left: 30%;
+}
+img.sunlight {
+	width: 100%;
+/*	vertical-align: middle;*/
+}
+#toggle {
+	vertical-align:middle;
+	height: 100%;
+	padding-left: 20px;
+}
+#header {
+	display: inline-block;
+	vertical-align: middle
+}
+.glyphicon.glyphicon-align-justify {
+	font-size: 30px;
+}
+
+@media (max-width: @screen-sm-min) {
+	#sunlight {
+		margin-left: auto;
+	}
+}
+#content {
+	width: 100%;
+	height: 100%;
+	background-color: #ebebe0;
+/*			margin-top: 150px;*/
+}
+.tablecontent {
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	height: inherit;
+	width: 80%;
+/*	background-color: white;*/
+}
+.innerTab {
+	width: 97%;
+	margin-left: 1.5%;
+	margin-top: 20px;
+	background-color: white;
+	border-style: solid;
+	border-color: #E4E2DF;
+	border-width: 3px;
+	border-radius: 3px;
+}
+.table-responsive{
+	width: 97%;
+	margin: auto;
+	margin-top: 1.5%;
+	margin-bottom: 1.5%;
+	border-style: solid;
+	border-color: #E4E2DF;
+	border-radius: 5px;
+/*	margin-bottom: 0;*/
+	text-align: center;
+}
+
+.table {
+	width: 98%;
+	margin: auto;
+}
+.table thead {
+	font-size: 1.2em;
+/*	background-color: #ebebe0;*/
+}
+.nav .nav-tabs {
+	background-color: black;
+}
+/*		sidenav*/
+#sidenav {
+	height: 100%;
+	width: 15%;
+/*			position: fixed;*/
+/*			z-index: 1;*/
+	margin-left: 0;
+	background-color: #3E3F3F;
+	overflow-x: hidden;
+	transition: 0.5s;
+	display: inline-block;
+/*			padding-top: 60px;*/
+}
+/*#sidenav a, */
+#sidenav div {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #818181;
+/*	display: block;*/
+	transition: 0.3s
+}
+#sidenav div:hover, .offcanvas div:focus{
+	color: #f1f1f1;
+}
+
+/*
+#sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+*/
+
+@media screen and (max-height: 450px) {
+  #sidenav {padding-top: 15px;}
+  #sidenav a {width: 15%; font-size: 18px;}
+}
+
+
+.greyTag {
+	height: 4em;
+/*	text-align: center; */
+	background-color: #ebebe0;
+	border-bottom: solid #E4E2DF;
+/*	text-align: center;*/
+/*	display: table;*/
+/*		*/
+}
+.greyTag span {
+/*	display: table-cell;*/
+	height: auto;
+	padding-top: 0.5em;
+/*
+	vertical-align: middle;
+	text-align: center;
+*/
+}
+hr {
+	width: 97%;
+/*	margin-left: 1%;*/
+	border-color: #E4E2DF;
+	border-width: 3px;
+	margin: auto;
+}
+
+.table img {
+	height: 15px;
+	margin: 0;
+}
+ 
+
+
+td {
+/*	padding: auto;*/
+	text-align: left;
+}
+
+#detail {
+	width: 30px;
+	display:inline-block;
+	float: left;
+	margin-left:10px;
+	margin-top: 10px;
+}
+ 
+#star {
+	width: 30px;
+	float: right;
+	margin-right:20px;
+	margin-top: 10px;
+	display:inline-block;
+}
+
+#bio {
+	left: 0px;
+	padding: 5px;
+	float: left;
+	height: 150px;
+}
+
+.upperBorder {
+	width: auto;
+	margin-top: 4px;
+	padding-top: 2px;
+	border-top: solid #E4E2DF;
+}
+li:(.active) {
+	color: darkgray;
+}
+
+@media all and (max-device-width: 700px) {
+	#sidenav {
+		width: 10%;
+	}
+	#sidenav span {
+		text-align:center;
+	}
+	.t {
+		display:none;
+	}
+	.tablecontent {
+		width: 85%;
+	}
+	.inCarouselRight {
+		width: 100%;
+	
+	}
+	.inCarouselLeft {
+		width: 100%;
+	}	
+	.cede {
+		display:none;
+	}
+	object {
+		display:none;
+	}
+}

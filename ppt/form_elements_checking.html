@@ -1,0 +1,88 @@
+<html>
+
+<head>
+<title>Checking for Empty Fields</title>
+
+<script language=JavaScript>
+    function checkEmpty()
+    {
+    /* This function checks all of the fields of the form and notifies the client which, if any, form
+	fields are empty.  It returns a 1 if all the fields are full, and a 0 otherwise.
+    */
+
+	var firstname_filled=false;
+	var lastname_filled=false;
+	var streetaddress_filled=false;
+	var city_filled=false;
+	var phonenumber_filled=false;
+	var youremail_filled=false;
+	var blank="";
+
+    if (document.myform.firstname.value != blank)
+	    firstname_filled=true;
+	if (document.myform.lastname.value != blank)
+	    lastname_filled=true;
+	if (document.myform.streetaddress.value != blank)
+	    streetaddress_filled=true;
+	if (document.myform.city.value != blank)
+	    city_filled=true;
+	if (document.myform.phonenumber.value != blank)
+	    phonenumber_filled=true;
+	if (document.myform.youremail.value != blank)
+	    youremail_filled=true;
+
+    if ( (firstname_filled) && (lastname_filled)      && (streetaddress_filled) &&
+	     (city_filled)      && (phonenumber_filled)   && (youremail_filled) )
+	{
+	    alert("No missing fields");
+	    return(true);
+	}
+	else
+	{/* check which fields are missing */
+
+	     var alertstring="The following fields are missing:\n";
+	     
+	     if (!firstname_filled)
+		 alertstring=alertstring + "first name\n";
+	     if (!lastname_filled)
+		 alertstring=alertstring + "last name\n";
+	     if (!streetaddress_filled)
+		 alertstring=alertstring + "street address\n";
+	     if (!city_filled)
+		 alertstring=alertstring + "city\n";
+	     if (!phonenumber_filled)
+		 alertstring=alertstring + "phone number\n";
+	     if (!youremail_filled)
+		 alertstring=alertstring + "email\n";
+
+	     alert(alertstring);
+	     return(false);
+        }
+    }
+</script>
+</head>
+<BODY bgcolor="#ffffee">   <pre>
+Explanation: Each field is checked for a missing value, and if empty
+a boolean variable is set. A string is created of all empty fields
+and output.
+</pre><hr>
+
+<H1><FONT color="#000000">Checking For Empty Form Fields</H1></FONT><HR>
+
+Type in the data you wish to save to a file on the server.
+
+<FORM NAME="myform" METHOD="GET">
+
+First name: <INPUT type="text" name="firstname" size=16 ><br>
+Last name: <INPUT type="text" name="lastname" size=16 ><br>
+Street address: <INPUT type="text" name="streetaddress" size=41 ><br>
+City name: <INPUT type="text" name="city" size=21 ><br>
+Phone number: <INPUT type='text' name='phonenumber' size=13 ><br>
+Email: <INPUT type='text' name='youremail' size =20><br> <hr>
+
+<INPUT type='button' value='Add new entry' onClick="checkEmpty()" ><br>
+</FORM>
+<a href="../js_examples.html">Return to Main Page</a>
+<noscript></body>
+
+</html>

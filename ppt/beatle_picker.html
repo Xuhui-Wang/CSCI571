@@ -1,0 +1,37 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>Beatle Picker</TITLE> 
+  <SCRIPT LANGUAGE="javaScript"> 
+
+     function processData(form)
+     {
+       var alertstring="You selected ";
+       for (var j = 0; j < form.Beatles.length; j++)
+           if (form.Beatles[j].checked) {
+               alertstring += form.Beatles[j].value;
+               break;
+           }
+       alertstring+=" and Beatle song " + form.song.value;
+       alert(alertstring);
+     } 
+  </SCRIPT>
+</HEAD>
+
+<BODY>
+  <h1>Forms Processing Example: Beatle Picker</h1>
+  <FORM NAME="Abbey_Road"> 
+    Choose your favorite Beatle: <BR> 
+    <INPUT TYPE=radio NAME="Beatles" VALUE="Lennon" CHECKED="true">John<BR> 
+    <INPUT TYPE=radio NAME="Beatles" VALUE="MCcartney">Paul <BR> 
+    <INPUT TYPE=radio NAME="Beatles" VALUE="Harrison">George <BR> 
+    <INPUT TYPE=radio NAME="Beatles" VALUE="Starr">Ringo <BR> 
+    Enter the name of your favorite Beatles song:<BR> 
+    <INPUT TYPE="text" NAME="song"><P> 
+    <INPUT TYPE="button" NAME="process" VALUE="Process Request" onClick="processData(this.form)"> 
+  </FORM>
+  <a href="../js_examples.html">Return to Main Page</a>
+<noscript></BODY>
+
+</HTML> 

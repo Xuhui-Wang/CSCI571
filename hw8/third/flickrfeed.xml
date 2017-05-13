@@ -1,0 +1,510 @@
+
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xmlns:dc="http://purl.org/dc/elements/1.1/"
+            >
+
+	<title>Dori Smith's Photos</title>
+	<link rel="self" href="http://www.flickr.com/services/feeds/photos_public.gne?id=23922109@N00" />
+	<link rel="alternate" type="text/html" href="http://www.flickr.com/photos/dorismith/"/>
+	<id>tag:flickr.com,2005:/photos/public/116078</id>
+	<icon>http://static.flickr.com/5/buddyicons/23922109@N00.jpg?1113973282</icon>
+	<subtitle>A feed of Dori Smith's Photos</subtitle>
+
+	<updated>2006-03-22T20:12:44Z</updated>
+	<generator uri="http://www.flickr.com/">Flickr</generator>
+
+	<entry>
+		<title>Mash note</title>
+		<link rel="alternate" type="text/html" href="http://www.flickr.com/photos/dorismith/116463569/"/>
+		<id>tag:flickr.com,2005:/photo/116463569</id>
+
+		<published>2006-03-22T20:12:44Z</published>
+		<updated>2006-03-22T20:12:44Z</updated>
+                <dc:date.Taken>2006-03-22T12:12:44-08:00</dc:date.Taken>
+		<content type="html"><p><a href="http://www.flickr.com/people/dorismith/">Dori Smith</a> posted a photo:</p>
+
+<p><a href="http://www.flickr.com/photos/dorismith/116463569/" title="Mash note"><img src="http://static.flickr.com/44/116463569_483fd4ee7c_s.jpg" width="75" height="75" alt="Mash note" style="border: 5px solid #ddd;" /></a></p>
+
+<p>Last night, Tom and I presented at our local user group (NCMUG), talking about Macromedia Dreamweaver 8 and flogging our latest book. Afterwards, this cute young girl came up to me, handed me this bright pink piece of notebook paper, and ran off. <br />
+<br />
+It says:<br />
+<br />
+Dear Dory and ,<br />
+<br />
+
+Thank you for all you have taught me. This is really nice of you to taking time out of your night to teach us this stuff. It mostly was all very interesting. I never knew that macs could have so many qualities. See, almost every day I am on my computer trying to see new things. Yea! more new things This is my 1st mac meeting and I am glad that you two were the ones hosting it.<br />
+<br />
+From<br />
+<br />
+Mandi L.</p></content>
+		<author>
+			<name>Dori Smith</name>
+
+			<uri>http://www.flickr.com/people/dorismith/</uri>
+		</author>
+		<category term="dorismith" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="ncmug" scheme="http://www.flickr.com/photos/tags/" />
+                
+	</entry>
+	<entry>
+		<title>universalAccess</title>
+		<link rel="alternate" type="text/html" href="http://www.flickr.com/photos/dorismith/76171129/"/>
+
+		<id>tag:flickr.com,2005:/photo/76171129</id>
+		<published>2005-12-22T06:46:30Z</published>
+		<updated>2005-12-22T06:46:30Z</updated>
+                <dc:date.Taken>2005-12-21T22:46:30-08:00</dc:date.Taken>
+		<content type="html"><p><a href="http://www.flickr.com/people/dorismith/">Dori Smith</a> posted a photo:</p>
+
+<p><a href="http://www.flickr.com/photos/dorismith/76171129/" title="universalAccess"><img src="http://static.flickr.com/39/76171129_266059bc5c_s.jpg" width="75" height="75" alt="universalAccess" style="border: 5px solid #ddd;" /></a></p>
+
+<p>Here's the Hearing tab of the Universal Access pane in System Preferences. The screen is set to flash, because that's the only kind of system alert I can get.<br />
+<br />
+Turning this off doesn't change anything, btw.</p></content>
+		<author>
+			<name>Dori Smith</name>
+			<uri>http://www.flickr.com/people/dorismith/</uri>
+
+		</author>
+		<category term="dori" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="os" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="x" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="mac" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="bugfix" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="lazyweb" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="helpme" scheme="http://www.flickr.com/photos/tags/" />
+                
+	</entry>
+
+	<entry>
+		<title>SystemSoundsFolder</title>
+		<link rel="alternate" type="text/html" href="http://www.flickr.com/photos/dorismith/76171128/"/>
+		<id>tag:flickr.com,2005:/photo/76171128</id>
+		<published>2005-12-22T06:46:30Z</published>
+		<updated>2005-12-22T06:46:30Z</updated>
+                <dc:date.Taken>2005-12-21T22:46:30-08:00</dc:date.Taken>
+
+		<content type="html"><p><a href="http://www.flickr.com/people/dorismith/">Dori Smith</a> posted a photo:</p>
+
+<p><a href="http://www.flickr.com/photos/dorismith/76171128/" title="SystemSoundsFolder"><img src="http://static.flickr.com/38/76171128_f05c829b7c_s.jpg" width="75" height="75" alt="SystemSoundsFolder" style="border: 5px solid #ddd;" /></a></p>
+
+<p>Here are the contents of /System/Library/Components/CoreAudio.component/Contents/Resources/SystemSounds. These all play just fine through QuickTime Player.</p></content>
+		<author>
+			<name>Dori Smith</name>
+			<uri>http://www.flickr.com/people/dorismith/</uri>
+		</author>
+		<category term="dori" scheme="http://www.flickr.com/photos/tags/" />
+
+		<category term="os" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="x" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="mac" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="bugfix" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="lazyweb" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="helpme" scheme="http://www.flickr.com/photos/tags/" />
+                
+	</entry>
+	<entry>
+		<title>SoundsFolder</title>
+
+		<link rel="alternate" type="text/html" href="http://www.flickr.com/photos/dorismith/76171127/"/>
+		<id>tag:flickr.com,2005:/photo/76171127</id>
+		<published>2005-12-22T06:46:30Z</published>
+		<updated>2005-12-22T06:46:30Z</updated>
+                <dc:date.Taken>2005-12-21T22:46:30-08:00</dc:date.Taken>
+		<content type="html"><p><a href="http://www.flickr.com/people/dorismith/">Dori Smith</a> posted a photo:</p>
+
+<p><a href="http://www.flickr.com/photos/dorismith/76171127/" title="SoundsFolder"><img src="http://static.flickr.com/41/76171127_d3bb758914_s.jpg" width="75" height="75" alt="SoundsFolder" style="border: 5px solid #ddd;" /></a></p>
+
+<p>These aiff files are in the /System/Library/Sounds folder. Playing them through the QuickTime Player works just fine.</p></content>
+		<author>
+			<name>Dori Smith</name>
+			<uri>http://www.flickr.com/people/dorismith/</uri>
+		</author>
+		<category term="dori" scheme="http://www.flickr.com/photos/tags/" />
+
+		<category term="os" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="x" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="mac" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="bugfix" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="lazyweb" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="helpme" scheme="http://www.flickr.com/photos/tags/" />
+                
+	</entry>
+	<entry>
+		<title>soundEffects</title>
+
+		<link rel="alternate" type="text/html" href="http://www.flickr.com/photos/dorismith/76171126/"/>
+		<id>tag:flickr.com,2005:/photo/76171126</id>
+		<published>2005-12-22T06:46:30Z</published>
+		<updated>2005-12-22T06:46:30Z</updated>
+                <dc:date.Taken>2005-12-21T22:46:30-08:00</dc:date.Taken>
+		<content type="html"><p><a href="http://www.flickr.com/people/dorismith/">Dori Smith</a> posted a photo:</p>
+
+<p><a href="http://www.flickr.com/photos/dorismith/76171126/" title="soundEffects"><img src="http://static.flickr.com/39/76171126_161171f50a_s.jpg" width="75" height="75" alt="soundEffects" style="border: 5px solid #ddd;" /></a></p>
+
+<p>Here's the Sound Effects tab of the Sound pane in System Preferences. Clicking on any of the sound file names causes the screen to flash. Moving the Output volume slider causes the volume sound to play.</p></content>
+		<author>
+			<name>Dori Smith</name>
+			<uri>http://www.flickr.com/people/dorismith/</uri>
+		</author>
+		<category term="dori" scheme="http://www.flickr.com/photos/tags/" />
+
+		<category term="os" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="x" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="mac" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="bugfix" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="lazyweb" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="helpme" scheme="http://www.flickr.com/photos/tags/" />
+                
+	</entry>
+	<entry>
+		<title>output</title>
+
+		<link rel="alternate" type="text/html" href="http://www.flickr.com/photos/dorismith/76171125/"/>
+		<id>tag:flickr.com,2005:/photo/76171125</id>
+		<published>2005-12-22T06:46:30Z</published>
+		<updated>2005-12-22T06:46:30Z</updated>
+                <dc:date.Taken>2005-12-21T22:46:30-08:00</dc:date.Taken>
+		<content type="html"><p><a href="http://www.flickr.com/people/dorismith/">Dori Smith</a> posted a photo:</p>
+
+<p><a href="http://www.flickr.com/photos/dorismith/76171125/" title="output"><img src="http://static.flickr.com/9/76171125_193fe242a1_s.jpg" width="75" height="75" alt="output" style="border: 5px solid #ddd;" /></a></p>
+
+<p>Here's the Output tab of the Sound pane in System Preferences. The internal speakers are selected, and work for everything but system alerts.</p></content>
+		<author>
+			<name>Dori Smith</name>
+			<uri>http://www.flickr.com/people/dorismith/</uri>
+		</author>
+		<category term="dori" scheme="http://www.flickr.com/photos/tags/" />
+
+		<category term="os" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="x" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="mac" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="bugfix" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="lazyweb" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="helpme" scheme="http://www.flickr.com/photos/tags/" />
+                
+	</entry>
+	<entry>
+		<title>My odometer reading</title>
+
+		<link rel="alternate" type="text/html" href="http://www.flickr.com/photos/dorismith/69558528/"/>
+		<id>tag:flickr.com,2005:/photo/69558528</id>
+		<published>2005-12-03T03:48:40Z</published>
+		<updated>2005-12-03T03:48:40Z</updated>
+                <dc:date.Taken>2005-11-07T13:04:54-08:00</dc:date.Taken>
+		<content type="html"><p><a href="http://www.flickr.com/people/dorismith/">Dori Smith</a> posted a photo:</p>
+
+<p><a href="http://www.flickr.com/photos/dorismith/69558528/" title="My odometer reading"><img src="http://static.flickr.com/20/69558528_d6b9bb4b08_s.jpg" width="75" height="75" alt="My odometer reading" style="border: 5px solid #ddd;" /></a></p>
+
+<p>Why yes, I am a geek.</p></content>
+		<author>
+			<name>Dori Smith</name>
+			<uri>http://www.flickr.com/people/dorismith/</uri>
+		</author>
+		<category term="32768" scheme="http://www.flickr.com/photos/tags/" />
+
+		<category term="dori" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="geek" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="dorismith" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="miata" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="healdsburg" scheme="http://www.flickr.com/photos/tags/" />
+                
+	</entry>
+	<entry>
+		<title>This explains a lot about Microsoft</title>
+
+		<link rel="alternate" type="text/html" href="http://www.flickr.com/photos/dorismith/53454742/"/>
+		<id>tag:flickr.com,2005:/photo/53454742</id>
+		<published>2005-10-17T18:09:21Z</published>
+		<updated>2005-10-17T18:09:21Z</updated>
+                <dc:date.Taken>2005-10-17T11:09:21-08:00</dc:date.Taken>
+		<content type="html"><p><a href="http://www.flickr.com/people/dorismith/">Dori Smith</a> posted a photo:</p>
+
+<p><a href="http://www.flickr.com/photos/dorismith/53454742/" title="This explains a lot about Microsoft"><img src="http://static.flickr.com/25/53454742_514903e577_s.jpg" width="75" height="75" alt="This explains a lot about Microsoft" style="border: 5px solid #ddd;" /></a></p>
+
+<p>Sean's writing his college essay, and Microsoft Word recommended that he change a line from &amp;quot;it is better to try and fail then to never try at all&amp;quot; to &amp;quot;it is better to try to fail then to never try at all&amp;quot; -- which says something, somehow.</p></content>
+		<author>
+			<name>Dori Smith</name>
+			<uri>http://www.flickr.com/people/dorismith/</uri>
+
+		</author>
+		<category term="microsoft" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="glitch" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="dori" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="collegeessay" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="macosx" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="screenshot" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="osx" scheme="http://www.flickr.com/photos/tags/" />
+                
+	</entry>
+
+	<entry>
+		<title>Accuweather Bug</title>
+		<link rel="alternate" type="text/html" href="http://www.flickr.com/photos/dorismith/33587715/"/>
+		<id>tag:flickr.com,2005:/photo/33587715</id>
+		<published>2005-08-13T07:23:13Z</published>
+		<updated>2005-08-13T07:23:13Z</updated>
+                <dc:date.Taken>2005-08-13T00:23:13-08:00</dc:date.Taken>
+
+		<content type="html"><p><a href="http://www.flickr.com/people/dorismith/">Dori Smith</a> posted a photo:</p>
+
+<p><a href="http://www.flickr.com/photos/dorismith/33587715/" title="Accuweather Bug"><img src="http://static.flickr.com/23/33587715_5a524207b0_s.jpg" width="75" height="75" alt="Accuweather Bug" style="border: 5px solid #ddd;" /></a></p>
+
+<p>The time: just after midnight. The place: Sonoma County, California. But in some of the county the sun is shining, and in other parts, it's not. Or at least that's what Accuweather says.</p></content>
+		<author>
+			<name>Dori Smith</name>
+			<uri>http://www.flickr.com/people/dorismith/</uri>
+		</author>
+		<category term="accuweather" scheme="http://www.flickr.com/photos/tags/" />
+
+		<category term="bugs" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="apple" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="widget" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="dashboardwidget" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="dori" scheme="http://www.flickr.com/photos/tags/" />
+                
+	</entry>
+	<entry>
+		<title>sspp16</title>
+
+		<link rel="alternate" type="text/html" href="http://www.flickr.com/photos/dorismith/32715089/"/>
+		<id>tag:flickr.com,2005:/photo/32715089</id>
+		<published>2005-08-09T21:53:15Z</published>
+		<updated>2005-08-09T21:53:15Z</updated>
+                <dc:date.Taken>2005-08-09T14:41:24-08:00</dc:date.Taken>
+		<content type="html"><p><a href="http://www.flickr.com/people/dorismith/">Dori Smith</a> posted a photo:</p>
+
+<p><a href="http://www.flickr.com/photos/dorismith/32715089/" title="sspp16"><img src="http://static.flickr.com/23/32715089_bc159218c2_s.jpg" width="75" height="75" alt="sspp16" style="border: 5px solid #ddd;" /></a></p>
+
+</content>
+		<author>
+			<name>Dori Smith</name>
+			<uri>http://www.flickr.com/people/dorismith/</uri>
+		</author>
+		<category term="dori" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="seniorportrait" scheme="http://www.flickr.com/photos/tags/" />
+                
+	</entry>
+
+	<entry>
+		<title>sspp15</title>
+		<link rel="alternate" type="text/html" href="http://www.flickr.com/photos/dorismith/32715088/"/>
+		<id>tag:flickr.com,2005:/photo/32715088</id>
+		<published>2005-08-09T21:53:15Z</published>
+		<updated>2005-08-09T21:53:15Z</updated>
+                <dc:date.Taken>2005-08-09T14:41:32-08:00</dc:date.Taken>
+
+		<content type="html"><p><a href="http://www.flickr.com/people/dorismith/">Dori Smith</a> posted a photo:</p>
+
+<p><a href="http://www.flickr.com/photos/dorismith/32715088/" title="sspp15"><img src="http://static.flickr.com/21/32715088_0643e7bb5f_s.jpg" width="75" height="75" alt="sspp15" style="border: 5px solid #ddd;" /></a></p>
+
+</content>
+		<author>
+			<name>Dori Smith</name>
+			<uri>http://www.flickr.com/people/dorismith/</uri>
+		</author>
+		<category term="dori" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="seniorportrait" scheme="http://www.flickr.com/photos/tags/" />
+                
+	</entry>
+
+	<entry>
+		<title>sspp14</title>
+		<link rel="alternate" type="text/html" href="http://www.flickr.com/photos/dorismith/32715087/"/>
+		<id>tag:flickr.com,2005:/photo/32715087</id>
+		<published>2005-08-09T21:53:15Z</published>
+		<updated>2005-08-09T21:53:15Z</updated>
+                <dc:date.Taken>2005-08-09T14:41:47-08:00</dc:date.Taken>
+
+		<content type="html"><p><a href="http://www.flickr.com/people/dorismith/">Dori Smith</a> posted a photo:</p>
+
+<p><a href="http://www.flickr.com/photos/dorismith/32715087/" title="sspp14"><img src="http://static.flickr.com/23/32715087_d1e6b01fdf_s.jpg" width="75" height="75" alt="sspp14" style="border: 5px solid #ddd;" /></a></p>
+
+</content>
+		<author>
+			<name>Dori Smith</name>
+			<uri>http://www.flickr.com/people/dorismith/</uri>
+		</author>
+		<category term="dori" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="seniorportrait" scheme="http://www.flickr.com/photos/tags/" />
+                
+	</entry>
+
+	<entry>
+		<title>sspp13</title>
+		<link rel="alternate" type="text/html" href="http://www.flickr.com/photos/dorismith/32715086/"/>
+		<id>tag:flickr.com,2005:/photo/32715086</id>
+		<published>2005-08-09T21:53:15Z</published>
+		<updated>2005-08-09T21:53:15Z</updated>
+                <dc:date.Taken>2005-08-09T14:41:55-08:00</dc:date.Taken>
+
+		<content type="html"><p><a href="http://www.flickr.com/people/dorismith/">Dori Smith</a> posted a photo:</p>
+
+<p><a href="http://www.flickr.com/photos/dorismith/32715086/" title="sspp13"><img src="http://static.flickr.com/22/32715086_c3d9b86c3e_s.jpg" width="75" height="75" alt="sspp13" style="border: 5px solid #ddd;" /></a></p>
+
+</content>
+		<author>
+			<name>Dori Smith</name>
+			<uri>http://www.flickr.com/people/dorismith/</uri>
+		</author>
+		<category term="dori" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="seniorportrait" scheme="http://www.flickr.com/photos/tags/" />
+                
+	</entry>
+
+	<entry>
+		<title>sspp12</title>
+		<link rel="alternate" type="text/html" href="http://www.flickr.com/photos/dorismith/32714090/"/>
+		<id>tag:flickr.com,2005:/photo/32714090</id>
+		<published>2005-08-09T21:49:04Z</published>
+		<updated>2005-08-09T21:49:04Z</updated>
+                <dc:date.Taken>2005-08-09T14:42:02-08:00</dc:date.Taken>
+
+		<content type="html"><p><a href="http://www.flickr.com/people/dorismith/">Dori Smith</a> posted a photo:</p>
+
+<p><a href="http://www.flickr.com/photos/dorismith/32714090/" title="sspp12"><img src="http://static.flickr.com/22/32714090_9fe05fb9e1_s.jpg" width="75" height="75" alt="sspp12" style="border: 5px solid #ddd;" /></a></p>
+
+</content>
+		<author>
+			<name>Dori Smith</name>
+			<uri>http://www.flickr.com/people/dorismith/</uri>
+		</author>
+		<category term="dori" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="seniorportrait" scheme="http://www.flickr.com/photos/tags/" />
+                
+	</entry>
+
+	<entry>
+		<title>sspp11</title>
+		<link rel="alternate" type="text/html" href="http://www.flickr.com/photos/dorismith/32714089/"/>
+		<id>tag:flickr.com,2005:/photo/32714089</id>
+		<published>2005-08-09T21:49:04Z</published>
+		<updated>2005-08-09T21:49:04Z</updated>
+                <dc:date.Taken>2005-08-09T14:42:07-08:00</dc:date.Taken>
+
+		<content type="html"><p><a href="http://www.flickr.com/people/dorismith/">Dori Smith</a> posted a photo:</p>
+
+<p><a href="http://www.flickr.com/photos/dorismith/32714089/" title="sspp11"><img src="http://static.flickr.com/23/32714089_455d7e6d06_s.jpg" width="75" height="75" alt="sspp11" style="border: 5px solid #ddd;" /></a></p>
+
+</content>
+		<author>
+			<name>Dori Smith</name>
+			<uri>http://www.flickr.com/people/dorismith/</uri>
+		</author>
+		<category term="dori" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="seniorportrait" scheme="http://www.flickr.com/photos/tags/" />
+                
+	</entry>
+
+	<entry>
+		<title>sspp10</title>
+		<link rel="alternate" type="text/html" href="http://www.flickr.com/photos/dorismith/32714088/"/>
+		<id>tag:flickr.com,2005:/photo/32714088</id>
+		<published>2005-08-09T21:49:04Z</published>
+		<updated>2005-08-09T21:49:04Z</updated>
+                <dc:date.Taken>2005-08-09T14:42:12-08:00</dc:date.Taken>
+
+		<content type="html"><p><a href="http://www.flickr.com/people/dorismith/">Dori Smith</a> posted a photo:</p>
+
+<p><a href="http://www.flickr.com/photos/dorismith/32714088/" title="sspp10"><img src="http://static.flickr.com/22/32714088_cc1e9d1dbf_s.jpg" width="75" height="75" alt="sspp10" style="border: 5px solid #ddd;" /></a></p>
+
+</content>
+		<author>
+			<name>Dori Smith</name>
+			<uri>http://www.flickr.com/people/dorismith/</uri>
+		</author>
+		<category term="dori" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="seniorportrait" scheme="http://www.flickr.com/photos/tags/" />
+                
+	</entry>
+
+	<entry>
+		<title>sspp09</title>
+		<link rel="alternate" type="text/html" href="http://www.flickr.com/photos/dorismith/32714087/"/>
+		<id>tag:flickr.com,2005:/photo/32714087</id>
+		<published>2005-08-09T21:49:04Z</published>
+		<updated>2005-08-09T21:49:04Z</updated>
+                <dc:date.Taken>2005-08-09T14:42:21-08:00</dc:date.Taken>
+
+		<content type="html"><p><a href="http://www.flickr.com/people/dorismith/">Dori Smith</a> posted a photo:</p>
+
+<p><a href="http://www.flickr.com/photos/dorismith/32714087/" title="sspp09"><img src="http://static.flickr.com/22/32714087_7403b77742_s.jpg" width="75" height="75" alt="sspp09" style="border: 5px solid #ddd;" /></a></p>
+
+</content>
+		<author>
+			<name>Dori Smith</name>
+			<uri>http://www.flickr.com/people/dorismith/</uri>
+		</author>
+		<category term="dori" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="seniorportrait" scheme="http://www.flickr.com/photos/tags/" />
+                
+	</entry>
+
+	<entry>
+		<title>sspp08</title>
+		<link rel="alternate" type="text/html" href="http://www.flickr.com/photos/dorismith/32714086/"/>
+		<id>tag:flickr.com,2005:/photo/32714086</id>
+		<published>2005-08-09T21:49:04Z</published>
+		<updated>2005-08-09T21:49:04Z</updated>
+                <dc:date.Taken>2005-08-09T14:42:27-08:00</dc:date.Taken>
+
+		<content type="html"><p><a href="http://www.flickr.com/people/dorismith/">Dori Smith</a> posted a photo:</p>
+
+<p><a href="http://www.flickr.com/photos/dorismith/32714086/" title="sspp08"><img src="http://static.flickr.com/21/32714086_fcf877163c_s.jpg" width="75" height="75" alt="sspp08" style="border: 5px solid #ddd;" /></a></p>
+
+</content>
+		<author>
+			<name>Dori Smith</name>
+			<uri>http://www.flickr.com/people/dorismith/</uri>
+		</author>
+		<category term="dori" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="seniorportrait" scheme="http://www.flickr.com/photos/tags/" />
+                
+	</entry>
+
+	<entry>
+		<title>sspp07</title>
+		<link rel="alternate" type="text/html" href="http://www.flickr.com/photos/dorismith/32714085/"/>
+		<id>tag:flickr.com,2005:/photo/32714085</id>
+		<published>2005-08-09T21:49:04Z</published>
+		<updated>2005-08-09T21:49:04Z</updated>
+                <dc:date.Taken>2005-08-09T14:42:35-08:00</dc:date.Taken>
+
+		<content type="html"><p><a href="http://www.flickr.com/people/dorismith/">Dori Smith</a> posted a photo:</p>
+
+<p><a href="http://www.flickr.com/photos/dorismith/32714085/" title="sspp07"><img src="http://static.flickr.com/23/32714085_0537808b0d_s.jpg" width="75" height="75" alt="sspp07" style="border: 5px solid #ddd;" /></a></p>
+
+</content>
+		<author>
+			<name>Dori Smith</name>
+			<uri>http://www.flickr.com/people/dorismith/</uri>
+		</author>
+		<category term="dori" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="seniorportrait" scheme="http://www.flickr.com/photos/tags/" />
+                
+	</entry>
+
+	<entry>
+		<title>sspp06</title>
+		<link rel="alternate" type="text/html" href="http://www.flickr.com/photos/dorismith/32713685/"/>
+		<id>tag:flickr.com,2005:/photo/32713685</id>
+		<published>2005-08-09T21:47:42Z</published>
+		<updated>2005-08-09T21:47:42Z</updated>
+                <dc:date.Taken>2005-08-09T14:42:40-08:00</dc:date.Taken>
+
+		<content type="html"><p><a href="http://www.flickr.com/people/dorismith/">Dori Smith</a> posted a photo:</p>
+
+<p><a href="http://www.flickr.com/photos/dorismith/32713685/" title="sspp06"><img src="http://static.flickr.com/22/32713685_5bde2ae5b2_s.jpg" width="75" height="75" alt="sspp06" style="border: 5px solid #ddd;" /></a></p>
+
+</content>
+		<author>
+			<name>Dori Smith</name>
+			<uri>http://www.flickr.com/people/dorismith/</uri>
+		</author>
+		<category term="dori" scheme="http://www.flickr.com/photos/tags/" />
+		<category term="seniorportrait" scheme="http://www.flickr.com/photos/tags/" />
+                
+	</entry>
+
+</feed>

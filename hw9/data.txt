@@ -1,0 +1,134 @@
+http://testwxh.pgcrkp2yzt.us-west-2.elasticbeanstalk.com/hw_congress/congress.php?id=1
+
+
+
+layout_main
+
+
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.content_frame, new firstFragment()).commit();
+fragmentManager.beginTransaction().replace(R.id.content_frame, new secondFragment()).commit();
+
+fragmentManager.beginTransaction().replace(R.id.content_frame, new thirdFragment()).commit();
+//            fragmentManager.beginTransaction().replace(R.id.content_frame, new fourthFragment()).commit();
+
+
+    <TextView
+        android:id = "@+id/myTextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="haha!"/>
+
+    <ListView
+        android:layout_below="@id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ListView>
+
+
+
+            adapter.addFragments(new col_1(), "ACTIVE BILLS");
+            adapter.addFragments(new col_2(), "NEW BILLS");
+
+            setColId(1);
+            //set Tabs
+            adapter.clear();
+            adapter.addFragments(new col_1(), "HOUSE");
+            adapter.addFragments(new col_2(), "SENATE");
+            adapter.addFragments(new col_3(), "JOINT");
+            setColId(1);
+            viewPager.setAdapter(adapter);
+            tabLayout.setupWithViewPager(viewPager);
+
+            setColId(1);
+            //set Tabs
+            adapter.clear();
+            adapter.addFragments(new col_1(), "LEGISLATORS");
+            adapter.addFragments(new col_2(), "BILLS");
+            adapter.addFragments(new col_3(), "COMMITTEES");
+            setColId(1);
+            viewPager.setAdapter(adapter);
+            tabLayout.setupWithViewPager(viewPager);
+
+
+                //set TabLayout
+                tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+                viewPager = (ViewPager) findViewById(R.id.viewPager);
+                viewPagerAdapter.clear();
+                viewPagerAdapter.addFragments(new col_1(), "ACTIVE BILLS");
+                viewPagerAdapter.addFragments(new col_2(), "NEW BILLS");
+                viewPager.setAdapter(viewPagerAdapter);
+                tabLayout.setupWithViewPager(viewPager);
+                tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+                    @Override
+                    public void onTabSelected(TabLayout.Tab tab) {
+                        int num = tab.getPosition();
+                        setColId(num + 1);
+                        Log.i("onSelected: ", "row: " + row_id + "/ col: " + col_id);
+                    }
+
+                    @Override
+                    public void onTabUnselected(TabLayout.Tab tab) {
+
+                    }
+
+                    @Override
+                    public void onTabReselected(TabLayout.Tab tab) {
+
+                    }
+                });
+
+                //set TabLayout
+                tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+                viewPager = (ViewPager) findViewById(R.id.viewPager);
+                viewPagerAdapter.clear();
+                viewPagerAdapter.addFragments(new col_1(), "HOUSE");
+                viewPagerAdapter.addFragments(new col_2(), "SENATE");
+                viewPagerAdapter.addFragments(new col_3(), "JOINT");
+                viewPager.setAdapter(viewPagerAdapter);
+                tabLayout.setupWithViewPager(viewPager);
+                tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+                    @Override
+                    public void onTabSelected(TabLayout.Tab tab) {
+                        int num = tab.getPosition();
+                        setColId(num + 1);
+                        Log.i("onSelected: ", "row: " + row_id + "/ col: " + col_id);
+                    }
+
+                    @Override
+                    public void onTabUnselected(TabLayout.Tab tab) {
+
+                    }
+
+                    @Override
+                    public void onTabReselected(TabLayout.Tab tab) {
+
+                    }
+                });
+
+                //set TabLayout
+                tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+                viewPager = (ViewPager) findViewById(R.id.viewPager);
+                viewPagerAdapter.clear();
+                viewPagerAdapter.addFragments(new col_1(), "LEGISLATORS");
+                viewPagerAdapter.addFragments(new col_2(), "BILLS");
+                viewPagerAdapter.addFragments(new col_3(), "COMMITTEES");
+                viewPager.setAdapter(viewPagerAdapter);
+                tabLayout.setupWithViewPager(viewPager);
+                tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+                    @Override
+                    public void onTabSelected(TabLayout.Tab tab) {
+                        int num = tab.getPosition();
+                        setColId(num + 1);
+                        Log.i("onSelected: ", "row: " + row_id + "/ col: " + col_id);
+                    }
+
+                    @Override
+                    public void onTabUnselected(TabLayout.Tab tab) {
+
+                    }
+
+                    @Override
+                    public void onTabReselected(TabLayout.Tab tab) {
+
+                    }
+                });

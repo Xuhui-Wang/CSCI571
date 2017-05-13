@@ -1,0 +1,12 @@
+<HTML>
+<script language=javascript1.2>
+function getInfo() {
+ RegExp.input=document.myform.NameAge.value;
+ re =/(\w+)\s(\d+)/;
+ re.exec(RegExp.input);
+ window.alert(RegExp.$1 + ", your age is " + RegExp.$2);}
+</script>
+Enter your first name and your age and press Enter
+<form name=myform>
+<input Name=NameAge onChange="getInfo(this); ">
+    </form></HTML>

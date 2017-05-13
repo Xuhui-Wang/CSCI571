@@ -1,0 +1,13 @@
+<div style="background:#EEEEEE; position: absolute; top: 2ex; padding: 1ex; z-index: 10;">
+width=<span id = "clientWidth"></span>
+window.innerWidth = <span id = "innerWidth"></span>
+</div>
+
+<script type="text/javascript">
+function showViewportSize() {
+    document.getElementById("clientWidth").innerHTML = document.documentElement.clientWidth;
+    document.getElementById("innerWidth").innerHTML = window.innerWidth;
+    setTimeout("showViewportSize()", 1250);
+}
+showViewportSize();
+</script>

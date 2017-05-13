@@ -1,0 +1,229 @@
+<html>
+<head>
+<title>Newspaper List</title>
+
+<style type = "text/css">
+    body {
+	margin:0 auto;
+ 	width: 850px;
+    }
+
+    h1 {
+        margin-top: 200px;
+        text-align:center;
+        vertical-align:middle;
+        font-family: Times, "Times New Roman", Georgia, serif;
+        font-weight:900;
+        font-size: 40px;
+    }
+    input.text {
+        height: 60px;
+        width: 380px;
+        border-color: #BAE2FE;
+        border-width: 9px;
+        border-radius:9px;
+        margin-left: 250px;
+        font-family: Optima, ‘Lucida Grande’, ‘Lucida Sans Unicode’, Verdana, Helvetica, Arial, sans-serif;
+        font-size: 25px;
+    }
+    input.button {
+        margin-top: 55px;
+        height: 50px;
+        width: 200px;
+        border-radius:9px;
+        margin-left: 320px;
+        font-family: Optima, ‘Lucida Grande’, ‘Lucida Sans Unicode’, Verdana, Helvetica, Arial, sans-serif;
+        font-size: 25px;
+    }
+</style>
+    
+<script>
+function loadFile(url){
+    var xmlhttp = null;
+    if(window.XMLHttpRequest){
+        xmlhttp = new XMLHttpRequest();	//Firefox, IE7+, Chrome, Safari, Firefox, Opera
+    }else{
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+//       alert("?");
+
+        xmlhttp.open("GET",url,false);     // program stops here when Non-exist;
+        xmlhttp.send();
+
+
+
+    if(xmlhttp.readyState == 4){ 
+        if(xmlhttp.status == 200){
+
+            xmlDoc = xmlhttp.responseXML;
+            return xmlDoc;
+        }else if(xmlhttp.status == 404){
+            alert("File not exists");
+            return null;
+        }else{
+            alert("error");
+            return null;
+        } 
+    }	
+}
+function isThere(url) {
+	var req= new AJ(); // XMLHttpRequest object
+	try {
+		req.open("HEAD", url, false);
+		req.send(null);		
+		return req.status== 200 ? true : false;
+	}
+	catch (er) {
+		return false;
+	}
+}
+function AJ() {
+	var obj;
+	if (window.XMLHttpRequest) obj= new XMLHttpRequest(); 
+	else if (window.ActiveXObject){
+		try{
+			obj= new ActiveXObject('MSXML2.XMLHTTP.3.0');
+		}
+		catch(er){
+			try{
+				obj= new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			catch(er){
+				obj= false;
+			}
+		}
+	}
+	return obj;
+}    
+function viewXML(form){
+	var URL = form.URL.value.replace(/\s+/g, "");
+
+	if(URL == ""){
+		alert("Input cannot be empty!");
+	}else{
+        if (!isThere(URL)) 
+            alert("file does NOT exist");
+		var point = URL.lastIndexOf(".");
+		var type = URL.substr(point);
+		if(type != ".xml"){
+			alert("Please input file end with .xml");
+		}else{
+
+			xmlDoc = loadFile(URL);         // the file would stop here if xml file does NOT exist;
+           
+			if(window.ActiveXObject){	//for IE, execute script
+				if(xmlDoc.parseError.errorCode != 0){
+					var err = xmlDoc.parseError;
+					generateError(xmlDoc);
+					hWin = window.open("", "Error", "height=300,width=340");
+					hWin.document.write(html_text);
+				}else {
+					generateHTML(xmlDoc);
+					if(listingList.length == 0){
+						alert("The file contains NO real estate listings");
+					}else{
+						hWin = window.open("", "homework4", "height=2000,width=800,resizable=yes,scrollbars=yes,toolbar=yes");
+						hWin.document.write(html_text);
+					}
+				}
+			}else{	//Firefox - execute script once XML object has loaded
+                
+				if(xmlDoc != null){		
+					if(xmlDoc.documentElement.nodeName == "parsererror"){
+						//alert("XML is not valid!");
+						alert("Error in XML file");
+					}else{
+                        
+						xmlDoc.onload = generateHTML(xmlDoc);
+                        
+						if(listingList.length == 0){
+							alert("The file contains NO real estate listings");
+						}else{
+							hWin = window.open("", "homework4", "height=2000,width=800,resizable=yes,scrollbars=yes,toolbar=yes");
+							hWin.document.write(html_text);
+						}
+					}
+				}
+				hWin.document.close();
+			}
+		}
+	}
+}    
+
+function generateHTML (xmlDoc) {
+	// body...
+	ELEMENT_NODE = 1;	// MS parser doesn't define Node.ELEMENT_NODE
+	root = xmlDoc.DocumentElement;
+	x=0;y=0;
+
+	listingList = xmlDoc.getElementsByTagName("Listing");
+	
+	html_text = "<html><head><title>Real Estate Listings</title></head><body>";
+	html_text += "<h2 style = 'text-align: center'>News Lists: </h2>";
+	html_text += "<table border='3' align = 'center'>";
+	/*caption = "Real Estate Listings";
+	html_text += "<caption align='left'><h1>" + caption + "</h1></caption>";*/
+	html_text += "<tbody>";
+	
+	//output headers and values
+	for(i=0; i<listingList.length; i++){
+		html_text += "<tr><th colspan='8'>Listing</th></tr>";
+		
+		for(j=0; j<listingList[i].childNodes.length; j++){
+			if(listingList[i].childNodes[j].nodeType == ELEMENT_NODE){
+				//output headers
+				header = listingList[i].childNodes[j].nodeName;
+				if(header == "ListingDetails")
+					header = "Details";
+				html_text += "<tr><th>" + header + "</th>";
+				for(k=0; k<listingList[i].childNodes[j].childNodes.length; k++){
+					if(listingList[i].childNodes[j].childNodes[k].nodeType == ELEMENT_NODE){
+						header = listingList[i].childNodes[j].childNodes[k].nodeName;
+						
+						if(header == "StreetAddress")
+							header = "Street";
+						if(header == "ListingUrl")
+							header = "Listing URL";
+						if(header == "Image"){
+							html_text += "<th colspan='3'>" + header + "</th>";
+						}else{
+							html_text += "<th width='" + x + "px' height='23px'>" + header + "</th>";
+						}
+					}
+				}	
+				html_text += "</tr>";
+
+				//output values
+				html_text += "<tr><td style='empty-cells:show'></td>";
+				for(k=0; k<listingList[i].childNodes[j].childNodes.length; k++){
+					if(listingList[i].childNodes[j].childNodes[k].nodeType == ELEMENT_NODE){
+						vv = listingList[i].childNodes[j].childNodes[k].firstChild.nodeValue;
+						if(listingList[i].childNodes[j].childNodes[k].nodeName == "ListingUrl"){
+							html_text += "<td><a href='" + vv + "'>Link to Listing</a></td>";
+						}else if(listingList[i].childNodes[j].childNodes[k].nodeName == "Image"){
+							html_text += "<td colspan='3'><img src='" + vv + "' width='200px' height='150px'></td>"
+						}else{
+							html_text += "<td>" + vv + "</td>";
+						}
+					}
+				}			
+				html_text += "</tr>";
+			}
+		}
+	}
+
+	html_text += "</tbody></table>";
+	html_text += "<noscript></bo" + "dy></html>";
+}
+ </script>
+ </head>
+<body>
+<h1>Enter URL for Newspaper List XML File</h1>
+<form name="myform" method="POST" id="location">
+<input class="text" type="text" name="URL" maxlength="255" value="newslist.xml" />
+<br />
+<input class="button" type="button" name="submit" value="Submit Query" onClick="viewXML(this.form)" />
+</form>
+</body>
+</html>
+

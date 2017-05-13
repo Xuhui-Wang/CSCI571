@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title>Opening a new window</title>
+
+  <script language=JavaScript>
+
+    function openWin()  
+    { 
+      var new_win=window.open("ex.html", "", "status=yes,width=300,outHeight=400,innerWidth=600,height=400,scrollbars=yes,resizable=no");
+    }
+  </script>
+</head>
+
+<BODY> <PRE>
+Explanation: on click uses openWin(); check out parameters
+  function openWin()
+    {
+     var new_win=window.open("ex.html", "", "status=yes,width=600,outHeight=400,innerWidth=300,height=400,scrollbars=yes,resizable=yes");
+    }        </PRE><HR>
+
+  <h2>Example of Opening a Window</h2>
+  <FORM method="GET" name=myform> 
+    Click this button to open a new window -> 
+    <input type=submit value="Click_Me!" onClick="openWin()"> 
+    
+  </FORM>
+    <a href="javascript:void 0;" onclick = "openWin()">click me to open a new window!</a>
+</BODY>

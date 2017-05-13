@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<!--image source: http://cs-server.usc.edu:45678/hw/hw8/images/-->
+<html>
+  <head>
+	<script src = "https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js">
+	</script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="dirPagination.js"></script>
+	<script src = "congress.js"></script>
+	<link rel = "stylesheet" type = "text/css" href = "congress.css" />
+  </head>
+	
+  <body ng-app = "congress" ng-controller = "page as side">    
+	<div>
+		<span id = "toggle">
+			<span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+		</span>
+	  	<a id = "sunlight" href = "http://sunlightfoundation.com/" target = "_blank"><img class = "sunlight" src = "http://cs-server.usc.edu:45678/hw/hw8/images/logo.png"></a>
+		<h1 id = "header">Congress API</h1>
+<!--		<span> {{side.tab}} &amp;&amp; {{side.navBar}} and {{nowCom.length}}</span>-->
+	</div>
+	<div id = "content">
+		<div id="sidenav">  <!--class="collapse" -->
+			<div id = "side1" ng-click = "side.setTab(1)">
+				<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;&nbsp;<span class = "t">Legislators</span>
+			</div>
+			<div ng-click = "side.setTab(2)" id = "side2"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>&nbsp;&nbsp;<span class = "t">Bills</span></div>
+			<div ng-click = "side.setTab(3)" id = "side3"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>&nbsp;&nbsp;<span class = "t">Committees</span></div>
+			<div ng-click = "side.setTab(4)" id = "side4"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>&nbsp;&nbsp;<span class = "t">Favorites</span></div>
+		</div>
+		<div ng-if = "side.tab == 1" class = "tablecontent">
+			<h1 style = "text-align:left; padding-left: 5%; padding-top: 5px; padding-bottom: 5px">Legislators</h1>
+			<hr>
+			<div id = "legCarousel" class = "carousel slide" data-wrap = false>
+				<div class = "carousel-inner" role = "listbox">
+					<div class = "item active">
+						<div class = "innerTab">
+							  <ul class="nav nav-tabs" style = "border-bottom: solid #F3F2F0">
+								<li class="active" ng-click="side.setNavBar(1)"><a data-toggle="tab" aria-controls="home">By State</a></li>
+								<li ng-click="side.setNavBar(2)"><a data-toggle="tab">House</a></li>
+								<li ng-click="side.setNavBar(3)"><a data-toggle="tab">Senate</a></li>
+							  </ul>
+							  <div class="tab-content">
+								<div ng-if = "side.navBar == 1" id="legislators">
+
+									<div class = "table-responsive">
+										<div class = "greyTag">
+											<span class = "col-md-2 col-lg-2" style = "font-size: 1.2em"><b>Legislators By State</b></span>
+											<span class = "col-md-2 col-lg-2"></span>
+											<span class = "col-md-2 col-lg-2"></span>
+											<span class = "col-md-2 col-lg-2"></span>
+											<span class = "col-md-2 col-lg-2"></span>
+											<span class = "col-md-2 col-lg-2">
+												<select ng-model="search.state" class="form-control">
+													<option value="">All States</option>
+													<option value="AL">Alabama</option>
+													<option value="AK">Alaska</option>
+													<option value="AZ">Arizona</option>
+													<option value="AR">Arkansas</option>
+													<option value="CA">California</option>
+													<option value="CO">Colorado</option>
+													<option value="CT">Connecticut</option>
+													<option value="DE">Delaware</option>
+													<option value="DC">District Of Columbia</option>
+													<option value="FL">Florida</option>
+													<option value="GA">Georgia</option>
+													<option value="HI">Hawaii</option>
+													<option value="ID">Idaho</option>
+													<option value="IL">Illinois</option>
+													<option value="IN">Indiana</option>
+													<option value="IA">Iowa</option>
+													<option value="KS">Kansas</option>
+													<option value="KY">Kentucky</option>
+													<option value="LA">Louisiana</option>
+													<option value="ME">Maine</option>
+													<option value="MD">Maryland</option>
+													<option value="MA">Massachusetts</option>
+													<option value="MI">Michigan</option>
+													<option value="MN">Minnesota</option>
+													<option value="MS">Mississippi</option>
+													<option value="MO">Missouri</option>
+													<option value="MT">Montana</option>
+													<option value="NE">Nebraska</option>
+													<option value="NV">Nevada</option>
+													<option value="NH">New Hampshire</option>
+													<option value="NJ">New Jersey</option>
+													<option value="NM">New Mexico</option>
+													<option value="NY">New York</option>
+													<option value="NC">North Carolina</option>
+													<option value="ND">North Dakota</option>
+													<option value="OH">Ohio</option>
+													<option value="OK">Oklahoma</option>
+													<option value="OR">Oregon</option>
+													<option value="PA">Pennsylvania</option>
+													<option value="RI">Rhode Island</option>
+													<option value="SC">South Carolina</option>
+													<option value="SD">South Dakota</option>
+													<option value="TN">Tennessee</option>
+													<option value="TX">Texas</option>
+													<option value="UT">Utah</option>
+													<option value="VT">Vermont</option>
+													<option value="VA">Virginia</option>
+													<option value="WA">Washington</option>
+													<option value="WV">West Virginia</option>
+													<option value="WI">Wisconsin</option>
+													<option value="WY">Wyoming</option>
+												</select>
+										</span>
+									  </div>
+										<table class = "table">
+										<thead>
+										  <tr>
+											<th style = "margin: auto">Party</th>
+											<th>Name</th>
+											<th>Chamber</th>
+											<th>District</th>
+											<th>State</th>
+											<th></th>
+										  </tr>
+										</thead>
+										<tbody>
+										  <tr dir-paginate="legi in legislators 
+															| filter: search 
+															| orderBy: 'last_name'
+															| orderBy: 'state_name'					
+															| itemsPerPage: pageSize" current-page="currentPage">
+											  <td><img ng-src={{legi.url}}></td>
+											  <td>{{legi.last_name}}, {{legi.first_name}}</td>
+											  <td><img ng-src={{legi.chamberUrl}}>{{legi.chamber}}</td>
+											  <td>{{legi.district}}</td>
+											  <td>{{legi.state_name}}</td>
+											  <td><button ng-click="side.setElement(legi)" type="button" class="btn btn-primary btn-sm" href="#legCarousel" data-slide="next">View Details</button></td>
+										  </tr>
+
+										</tbody>
+
+									  </table>
+										<dir-pagination-controls boundary-links=true></dir-pagination-controls>
+									</div>
+								</div>
+								<div ng-if = "side.navBar == 2" id="house">
+									<div class = "table-responsive">
+									  <div class = "greyTag">
+											<span class = "col-md-3 col-lg-3" style = "font-size: 1.2em"><b>Legislators By House</b></span>
+											<span class = "col-md-3 col-lg-3"></span>
+											<span class = "col-md-2 col-lg-2"></span>
+											<span class = "col-md-2 col-lg-2"></span>
+											<span class = "col-md-2 col-lg-2">
+												<input type = "text" class = "form-control" placeholder = "Search" ng-model = "searchHouse">
+											</span>
+									  </div>
+									  <table class = "table">
+										<thead>
+										  <tr>
+											<th style = "margin: auto">Party</th>
+											<th>Name</th>
+											<th>Chamber</th>
+											<th>District</th>
+											<th>State</th>
+											<th></th>
+										  </tr>
+										</thead>
+										<tbody>
+										  <tr dir-paginate="h in house 
+															| filter: searchHouse
+															| orderBy: 'last_name'
+															| itemsPerPage: pageSize" current-page="currentPage">
+											<td><img ng-src={{h.url}}></td>
+											<td>{{h.last_name}}, {{h.first_name}}</td>
+											<td><img ng-src={{h.chamberUrl}}>{{h.chamber}}</td>
+											<td>{{h.district}}</td>
+											<td>{{h.state_name}}</td>
+											<td><button ng-click="side.setElement(h)" type="button" class="btn btn-primary btn-sm" href="#legCarousel" data-slide="next">View Details</button></td>
+										  </tr>
+										</tbody>
+									  </table>
+									 <dir-pagination-controls boundary-links=true></dir-pagination-controls>
+									</div>
+								</div>
+								<div ng-if = "side.navBar == 3" id="senate">
+								  <div class = "table-responsive">
+									  <div class = "greyTag">
+											<span class = "col-md-2 col-lg-2" style = "font-size: 1.2em"><b>Legislators By Senate</b></span>
+											<span class = "col-md-2 col-lg-2"></span>
+											<span class = "col-md-2 col-lg-2"></span>
+											<span class = "col-md-2 col-lg-2"></span>
+											<span class = "col-md-2 col-lg-2"></span>
+											<span class = "col-md-2 col-lg-2">
+												<input type = "text" class = "form-control" placeholder = "Search" ng-model = "searchSenate">
+											</span>
+									  </div>
+
+									  <table class = "table">
+										<thead>
+										  <tr>
+											<th>Party</th>
+											<th>Name</th>
+											<th>Chamber</th>
+											<th>State</th>
+											<th></th>
+										  </tr>
+										</thead>
+										<tbody>
+										  <tr dir-paginate="s in senate
+															| filter: searchSenate
+															| orderBy: 'last_name'
+															| itemsPerPage: pageSize" current-page="currentPage">
+											<td><img ng-src={{s.url}}></td>
+											<td class = "col-md-3 col-lg-3">{{s.last_name}}, {{s.first_name}}</td>
+											<td><img ng-src={{s.chamberUrl}}>{{s.chamber}}</td>
+											<td class = "col-md-3 col-lg-3">{{s.state_name}}</td>
+											<td><button ng-click="side.setElement(s)" type="button" class="btn btn-primary btn-sm" href="#legCarousel" data-slide="next">View Details</button></td>
+										  </tr>
+										</tbody>
+									  </table>
+									  <dir-pagination-controls boundary-links=true></dir-pagination-controls>
+									</div>
+								</div>
+							  </div>
+
+						</div>
+					</div>
+					<div class = "item">
+						<div class="innerTab">
+							<div style="width: 100%; height: 50px; border-bottom: solid #E4E2DF;">
+								<div id = "detail">
+									<button type="button" class="btn btn-default" href="#legCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></button>
+								</div>
+								<h3 style="display:inline-block; float: left">&nbsp;&nbsp;Details</h3>
+								<div id = "star">
+									<button ng-if = "element.isFavorite != 'yes'" ng-click="side.clickEmpty1()" type="button" class="btn btn-default"><span class="glyphicon glyphicon-star-empty"></span></button>
+									<button ng-if = "element.isFavorite == 'yes'" ng-click="side.clickFull1()" type="button" class="btn btn-default"><span class="glyphicon glyphicon-star" style = "color: yellow"></span></button>
+								</div>
+							</div>
+							<div class="row">
+								<div class = "col-xs-12 col-sm-12 col-md-5 col-lg-5">
+										<div>
+											<div class = "upperBorder">								
+												<img id= "bio" ng-src="https://theunitedstates.io/images/congress/original/{{element.bioguide_id}}.jpg">
+											</div>
+											<div style="display: inline-block">
+												<div class = "upperBorder">
+													{{element.title}}, {{element.last_name}}, {{element.first_name}}
+												</div>
+												<div class = "upperBorder">
+													<a href = "mailto: {{element.oc_email}}">{{element.oc_email}}</a>
+												</div>
+												<div class = "upperBorder">
+													Chamber: {{element.chamber}}
+												</div>
+												<div class = "upperBorder">
+													<a>Contact: {{element.phone}}</a>
+												</div>
+												<div ng-if = "element.party == 'R'" class = "upperBorder">
+													<img style = "height: 15px" ng-src = "{{element.url}}">Republican
+												</div>
+												<div ng-if = "element.party == 'D'" class = "upperBorder">
+													<img style = "height: 15px" ng-src = "{{element.url}}">Democrat
+												</div>
+											</div>		
+										</div>
+										<div class = "upperBorder" style = "height: 30px">
+											<span style = "float: left; font-weight:bold">Start Term</span>
+											<span>{{element.date_term_start | date:'mediumDate'}}</span>
+										</div>
+										<div class = "upperBorder" style = "margin-top: 20px">
+											<span style = "float: left; font-weight:bold">End Term</span>
+											<span>{{element.date_term_end | date:'mediumDate'}}</span>
+										</div>
+										<div class = "upperBorder" style = "margin-top: 20px; height: 30px">
+											<span style = "float: left; font-weight:bold">Term</span>
+											<div class="progress" style = "width: 50%; float: right; margin-top: 5px; margin-bottom: 5px">
+											   <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{element.progress}}%"
+											   aria-valuemin="0" aria-valuemax="100" style="width:{{element.progress}}%">
+													{{element.progress}}%
+											   </div>
+											</div>
+										</div>
+										<div class = "upperBorder" style = "margin-top: 20px">
+											<span style = "float: left; font-weight:bold">Office</span>
+											<span>{{element.office}}</span>
+										</div>
+										<div class = "upperBorder" style = "margin-top: 20px">
+											<span style = "float: left; font-weight:bold">State</span>
+											<span>{{element.state_name}}</span>
+										</div>
+										<div class = "upperBorder" style = "margin-top: 20px">
+											<span style = "float: left; font-weight:bold">Fax</span>
+											<span><a>{{element.fax}}</a></span>
+										</div>
+										<div class = "upperBorder" style = "margin-top: 20px">
+											<span style = "float: left; font-weight:bold">Birthday</span>
+											<span>{{element.date_birth | date:'mediumDate'}}</span>
+										</div>
+										<div class = "upperBorder" style = "margin-top: 20px">
+											<span style = "float: left; font-weight:bold">Social Links</span>
+											<span><a ng-if = "element.facebook_id" href="https://www.facebook.com/{{element.facebook_id}}" target="_blank"><img style="height: 20px" src="http://cs-server.usc.edu:45678/hw/hw8/images/f.png"></a>
+											<a ng-if = "element.twitter_id" href="https://www.twitter.com/{{element.twitter_id}}" target="_blank"><img style="height: 20px" src="http://cs-server.usc.edu:45678/hw/hw8/images/t.png"></a>
+											<a ng-if = "element.website" href="{{element.website}}" target="_blank"><img style="height: 20px" src="http://cs-server.usc.edu:45678/hw/hw8/images/w.png"></a></span>
+										</div>
+																
+								</div>
+								<div class = "col-xs-12 col-sm-12 col-md-5 col-lg-5">
+									<h1 style = "float:left">Committees</h1>
+									<table class = "table">
+										<thead>
+											  <tr>
+												<th>Chamber</th>
+												<th>Committee ID</th>
+												<th>Name</th>
+											  </tr>
+										</thead>
+										<tbody>
+											<tr dir-paginate="c in legi_coms				
+																| itemsPerPage: 5">
+												<td>{{c.chamber}}</td>
+												<td>{{c.committee_id}}</td>
+												<td>{{c.name}}</td>
+											</tr>
+										</tbody>
+										<dir-pagination-controls style="display:none"></dir-pagination-controls>
+									</table>
+									<h1 style = "float:left">Bills</h1>
+									<table class = "table">
+										<thead>
+											  <tr>
+												<th>Bill ID</th>
+												<th>Title</th>
+												<th>Chamber</th>
+												<th>Bill Type</th>
+												<th>Congress</th>
+												<th>Link</th>
+											  </tr>
+										</thead>
+										<tbody>
+											<tr dir-paginate="b in legi_bills | itemsPerPage: 5">
+												<td>{{b.bill_id}}</td>
+												<td>{{b.official_title}}</td>
+												<td>{{b.chamber}}</td>
+												<td>{{b.bill_type}}</td>
+												<td>{{b.congress}}</td>
+												<td><a href = "{{b.last_version.urls.pdf}}" target="_blank">Link</a></td>
+											</tr>
+										</tbody>
+
+									</table>
+									<dir-pagination-controls style="display:none"></dir-pagination-controls>
+									
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div ng-if = "side.tab == 2" class = "tablecontent">
+			<h1 style = "text-align:left; padding-left: 5%; padding-top: 5px; padding-bottom: 5px">Bills</h1>
+			<hr>
+			<div id = "billCarousel" class = "carousel slide" data-wrap = false>
+				<div class = "carousel-inner" role = "listbox">
+					<div class = "item active">
+						<div class = "innerTab">
+							 <ul class="nav nav-tabs" style = "border-bottom: solid #F3F2F0">
+									<li class="active" ng-click="side.setNavBar(1)"><a data-toggle="tab" aria-controls="home">Active Bills</a></li>
+									<li ng-click="side.setNavBar(2)"><a data-toggle="tab">New Bills</a></li>
+							 </ul>
+							     <div class="tab-content">
+									<div ng-if = "side.navBar == 1" id="bills">
+										<div class = "table-responsive">
+										  <div class = "greyTag">
+												<span class = "col-md-3 col-lg-3" style = "font-size: 1.2em"><b>Active Bills</b></span>
+												<span class = "col-md-3 col-lg-3"></span>
+												<span class = "col-md-2 col-lg-2"></span>
+												<span class = "col-md-2 col-lg-2"></span>
+												<span class = "col-md-2 col-lg-2">
+													<input type = "text" class = "form-control" placeholder = "Search" ng-model = "searchActive">
+												</span>
+										  </div>
+										  <table class = "table">
+											<thead>
+											  <tr>
+												<th style = "margin: auto">Bill ID</th>
+												<th>Bill Type</th>
+												<th class="cede">Title</th>
+												<th>Chamber</th>
+												<th>Introduced On</th>
+												<th>Sponsor</th>
+											  </tr>
+											</thead>
+											<tbody>
+											  <tr dir-paginate="bill in bills 
+																| filter: searchActive
+																| orderBy: '-introduced_on'
+																| itemsPerPage: pageSize" current-page="currentPage">
+												<td>{{bill.bill_id}}</td>
+												<td>{{bill.bill_type}}</td>
+												<td class='cede'>{{bill.official_title}}</td>
+												<td><img ng-if="bill.chamber=='senate'" src = "http://cs-server.usc.edu:45678/hw/hw8/images/s.svg" style="height: 15px"><img ng-if="bill.chamber=='house'" src = "http://cs-server.usc.edu:45678/hw/hw8/images/h.png" style="height: 15px">{{bill.chamber}}</td>
+												<td>{{bill.introduced_on}}</td>
+												<td>{{bill.sponsor.title}}, {{bill.sponsor.last_name}}, {{bill.sponsor.first_name}}</td>
+												<td><button ng-click="side.setBillsElement(bill)" type="button" class="btn btn-primary btn-sm" href="#billCarousel" data-slide="next">View Details</button></td>
+											  </tr>
+											</tbody>
+										  </table>
+										 <dir-pagination-controls boundary-links=true></dir-pagination-controls>
+										</div>
+										</div>
+									<div ng-if = "side.navBar == 2" id="bills">
+										 <div class = "table-responsive">
+											  <div class = "greyTag">
+													<span class = "col-md-3 col-lg-3" style = "font-size: 1.2em"><b>New Bills</b></span>
+													<span class = "col-md-3 col-lg-3"></span>
+													<span class = "col-md-2 col-lg-2"></span>
+													<span class = "col-md-2 col-lg-2"></span>
+													<span class = "col-md-2 col-lg-2">
+														<input type = "text" class = "form-control" placeholder = "Search" ng-model = "searchNew">
+													</span>
+											  </div>
+											  <table class = "table">
+												<thead>
+												  <tr>
+													<th style = "margin: auto">Bill ID</th>
+													<th>Bill Type</th>
+													<th class="cede">Title</th>
+													<th>Chamber</th>
+													<th>Introduced On</th>
+													<th>Sponsor</th>
+												  </tr>
+												</thead>
+												<tbody>
+												  <tr dir-paginate="bill in newBills 
+																	| filter: searchNew
+																	| orderBy: '-introduced_on'
+																	| itemsPerPage: pageSize" current-page="currentPage">
+													<td>{{bill.bill_id}}</td>
+													<td>{{bill.bill_type}}</td>
+													<td class='cede'>{{bill.official_title}}</td>
+													<td><img ng-if="bill.chamber=='senate'" src = "http://cs-server.usc.edu:45678/hw/hw8/images/s.svg" style="height: 15px"><img ng-if="bill.chamber=='house'" src = "http://cs-server.usc.edu:45678/hw/hw8/images/h.png" style="height: 15px">{{bill.chamber}}</td>
+													<td>{{bill.introduced_on}}</td>
+													<td>{{bill.sponsor.title}}, {{bill.sponsor.last_name}}, {{bill.sponsor.first_name}}</td>
+													<td><button ng-click="side.setBillsElement(bill)" type="button" class="btn btn-primary btn-sm" href="#billCarousel" data-slide="next">View Details</button></td>
+												  </tr>
+												</tbody>
+											  </table>
+											 <dir-pagination-controls boundary-links=true></dir-pagination-controls>
+											</div>
+									</div>
+								 </div>
+						</div>
+					</div>
+					<div class = "item">
+						<div class = "innerTab">
+							<div style="width: 100%; height: 50px; border-bottom: solid #E4E2DF;">
+								<div id = "detail">
+									<button type="button" class="btn btn-default" href="#billCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></button>
+								</div>
+								<h3 style="display:inline-block; float: left">&nbsp;&nbsp;Details</h3>
+								<div id = "star">
+									<button ng-if = "billsElement.isFavorite != 'yes'" ng-click="side.clickEmpty2(billsElement)" type="button" class="btn btn-default"><span class="glyphicon glyphicon-star-empty"></span></button>
+									<button ng-if = "billsElement.isFavorite == 'yes'" ng-click="side.clickFull2(billsElement)" type="button" class="btn btn-default"><span class="glyphicon glyphicon-star" style = "color: yellow"></span></button>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-11 col-sm-11 col-md-5 col-lg-5" style="display:inline-block">
+									<table class = "table">
+										<tbody>
+											<tr>
+												<td><b>Bill ID</b></td>
+												<td>{{billsElement.bill_id}}</td>
+											</tr>
+											<tr>
+												<td><b>Title</b></td>
+												<td>{{billsElement.official_title}}</td>
+											</tr>
+											<tr>
+												<td><b>Bill Type</b></td>
+												<td>{{billsElement.bill_type}}</td>
+											</tr>
+											<tr>
+												<td><b>Sponsor</b></td>
+												<td>{{billsElement.sponsor.title}}, {{billsElement.sponsor.last_name}}, {{billsElement.sponsor.first_name}}</td>
+											</tr>
+											<tr>
+												<td><b>Chamber</b></td>
+												<td>{{billsElement.chamber}}</td>
+											</tr>
+											<tr>
+												<td><b>Status</b></td>
+												<td>{{billsElement.history.active}}</td>
+											</tr>
+											<tr>
+												<td><b>Introduced On</b></td>
+												<td>{{billsElement.date_intro | date:'mediumDate'}}</td>
+											</tr>
+											<tr>
+												<td><b>Congress URL</b></td>
+												<td><a href="{{billsElement.urls.congress}}" target="_blank">URL</a></td>
+											</tr>
+											<tr>
+												<td><b>Version Status</b></td>
+												<td>{{billsElement.last_version.version_name}}</td>
+											</tr>
+											<tr>
+												<td><b>Bill URL</b></td>
+												<td><a href="{{billsElement.last_version.urls.pdf}}" target="_blank">Link</a></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="col-xs-11 col-sm-11 col-md-5 col-lg-5" style="display:inline-block">
+									<object height="400px" width="100%" type="application/pdf" data="{{billsElement.last_version.urls.pdf}}">
+											<p>It appears you don't have a PDF plugin for this browser. No biggie matter... you can <a href="{{billsElement.last_version.urls.pdf}}">click here to download the PDF file.</a></p>
+
+						           </object>
+								</div>
+							</div>
+						</div>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+		<div ng-if = "side.tab == 3" class = "tablecontent">
+			<h1 style = "text-align:left; padding-left: 5%; padding-top: 5px; padding-bottom: 5px">Committees </h1>
+			<hr>
+			<div class = "innerTab">
+				
+				 <ul class="nav nav-tabs" style = "border-bottom: solid #F3F2F0">
+						<li class="active" ng-click="side.setNavBar(1)"><a data-toggle="tab" aria-controls="home">House</a></li>
+						<li ng-click="side.setNavBar(2)"><a data-toggle="tab">Senate</a></li>
+						<li ng-click="side.setNavBar(3)"><a data-toggle="tab">Joint</a></li>
+
+				 </ul>
+				<div class="tab-content">
+					<div class = "table-responsive">
+					  <div class = "greyTag">
+							<span class = "col-md-3 col-lg-3" style = "font-size: 1.2em"><b ng-if = "side.navBar == 1">House</b><b ng-if = "side.navBar == 2">Senate</b><b ng-if = "side.navBar == 3">Joint</b></span>
+							<span class = "col-md-3 col-lg-3"></span>
+							<span class = "col-md-2 col-lg-2"></span>
+							<span class = "col-md-2 col-lg-2"></span>
+							<span class = "col-md-2 col-lg-2">
+								<input type = "text" class = "form-control" placeholder = "Search" ng-model = "searchCom">
+							</span>
+					  </div>
+					  <table class = "table">
+						<thead>
+						  <tr>
+							<th></th>
+							<th>Chamber</th>
+							<th>Committee ID</th>
+							<th>Name</th>
+							<th ng-if="side.getNavBar() != 3">Parent Committee</th>
+							<th ng-if="side.getNavBar() == 1">Contact</th>
+							<th ng-if="side.getNavBar() == 1">Office</th>
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr dir-paginate="com in nowCom
+											| filter: searchCom
+											| orderBy: 'committee_id'
+											| itemsPerPage: pageSize" current-page="currentPage">
+							<td>									
+								<button ng-if = "com.isFavorite != 'yes'" ng-click="side.clickEmpty3(com)" type="button" class="btn btn-default"><span class="glyphicon glyphicon-star-empty"></span></button>
+								<button ng-if = "com.isFavorite == 'yes'" ng-click="side.clickFull3(com)" type="button" class="btn btn-default"><span class="glyphicon glyphicon-star" style = "color: yellow"></span></button>
+							 </td>
+							<td><img ng-if="com.chamber!='house'" src = "http://cs-server.usc.edu:45678/hw/hw8/images/s.svg" style="height: 15px"><img ng-if="com.chamber=='house'" src = "http://cs-server.usc.edu:45678/hw/hw8/images/h.png" style="height: 15px">{{com.chamber}}</td>
+							<td>{{com.committee_id}}</td>
+							<td>{{com.name}}</td>
+							<td ng-if="side.getNavBar() != 3">{{com.parent_committee_id}}</td>
+							<td ng-if="side.getNavBar() == 1">{{com.phone}}</td>
+							<td ng-if="side.getNavBar() == 1">{{com.office}}</td>
+						  </tr>
+						</tbody>
+					  </table>
+					 <dir-pagination-controls boundary-links=true></dir-pagination-controls>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div ng-if = "side.tab == 4" class = "tablecontent">
+			<h1 style = "text-align:left; padding-left: 5%; padding-top: 5px; padding-bottom: 5px">Favorites </h1>
+			<hr>
+			<div id = "fav" class = "carousel slide" data-wrap = false>
+				<div class = "carousel-inner" role = "listbox">
+					<div class = "item active">
+					   <div class = "innerTab">
+							 <ul class="nav nav-tabs" style = "border-bottom: solid #F3F2F0">
+									<li class="active" ng-click="side.setNavBar(1)"><a data-toggle="tab" aria-controls="home">Legislators</a></li>
+									<li ng-click="side.setNavBar(2)"><a data-toggle="tab">Bills</a></li>
+									<li ng-click="side.setNavBar(3)"><a data-toggle="tab">Committees</a></li>
+							 </ul>
+						<div class="tab-content">
+							<div class = "table-responsive">
+							  <div class = "greyTag">
+									<span class = "col-md-3 col-lg-3" style = "font-size: 1.2em"><b ng-if = "side.navBar == 1">Favorite Legislators</b><b ng-if = "side.navBar == 2">Favorite Bills</b><b ng-if = "side.navBar == 3">Favorite Committees</b></span>
+									<span class = "col-md-3 col-lg-3"></span>
+									<span class = "col-md-2 col-lg-2"></span>
+									<span class = "col-md-2 col-lg-2"></span>
+									<span class = "col-md-2 col-lg-2">
+										<input type = "text" class = "form-control" placeholder = "Search" ng-model = "searchFav">
+									</span>
+							  </div>
+							  <table class = "table">
+								<thead>
+								  <tr ng-if="side.getNavBar() == 1">
+									<th></th>
+									<th>Image</th>
+									<th>Party</th>
+									<th>Name</th>
+									<th>Chamber</th>  <!--  ng-if="side.getNavBar() != 3"-->
+									<th>Contact</th>
+									<th>State</th>
+									<th>Email</th>
+								  </tr>
+									<tr ng-if="side.getNavBar() == 2">
+									<th></th>
+									<th>Bill ID</th>
+									<th>Bill Type</th>
+									<th>Title</th>
+									<th>Chamber</th>  <!--  ng-if="side.getNavBar() != 3"-->
+									<th>Introduced On</th>
+									<th>Sponsor</th>
+									<th>View Details</th>
+								  </tr>
+								  <tr ng-if="side.getNavBar() == 3">
+									<th></th>
+									<th>Chamber</th>
+									<th>Committee ID</th>
+									<th>Name</th>
+									<th>Chamber</th>  <!--  ng-if="side.getNavBar() != 3"-->
+									<th>Parent Committee</th>
+									<th>Sub Committee</th>
+								  </tr>
+								</thead>
+								<tbody ng-if="side.getNavBar() == 1">
+								  <tr ng-repeat="f in F1 | filter: searchFav" current-page="currentPage">
+									<td>									
+										<button ng-click="side.del1(f)" type="button" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span></button>
+									</td>
+									<td>
+										<img style = "height: 20px" ng-src="https://theunitedstates.io/images/congress/original/{{f.bioguide_id}}.jpg">
+									</td>
+									<td>
+										<img style="height:20px" ng-if = "f.party == 'D'" src = "http://cs-server.usc.edu:45678/hw/hw8/images/d.png">
+										<img style="height:20px" ng-if = "f.party == 'R'" src = "http://cs-server.usc.edu:45678/hw/hw8/images/r.png">
+									</td>
+									<td>{{f.last_name}}, {{f.first_name}}</td>
+
+									<td> 
+										<img style="height:15px" ng-if = "f.chamber != 'house'" src = "http://cs-server.usc.edu:45678/hw/hw8/images/s.svg">
+										<img style="height:15px" ng-if = "f.chamber == 'house'" src = "http://cs-server.usc.edu:45678/hw/hw8/images/h.png">{{f.chamber}}</td>
+									<td>{{f.state_name}}</td>
+									<td>
+										<a href = "mailto: {{f.oc_email}}">{{f.oc_email}}</a>
+									</td>
+									<td><button ng-click="side.setElement(f)" type="button" class="btn btn-primary btn-sm" href="#fav" data-slide="next">View Details</button></td>
+								  </tr>
+								</tbody>
+								<tbody ng-if="side.getNavBar() == 2">
+								  <tr ng-repeat="f in F2 | filter: searchFav">
+									<td>									
+										<button ng-click="side.del2(f)" type="button" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span></button>
+									 </td>
+									<td>{{f.bill_id}}</td>
+									<td>{{f.bill_type}}</td>
+									<td>{{f.official_title}}</td>
+									<td ng-if = "f.chamber != 'house'">
+										<img src = "http://cs-server.usc.edu:45678/hw/hw8/images/s.svg" style="height: 15px">Senate
+									</td>
+									<td ng-if="f.chamber=='house'">
+										 <img src = "http://cs-server.usc.edu:45678/hw/hw8/images/h.png" style="height: 15px">House
+									</td>
+									<td>{{f.introduced_on}}</td>
+									<td>{{f.sponsor.title}}, {{f.sponsor.last_name}}, {{f.sponsor.first_name}}</td>
+									<td><button ng-click="side.setBillsElement(f)" type="button" class="btn btn-primary btn-sm" href="#fav" data-slide="next">View Details</button></td>
+								  </tr>
+								</tbody>
+								<tbody ng-if="side.getNavBar() == 3">
+								  <tr ng-repeat="f in F3 | filter: searchFav">
+									<td>									
+										<button ng-click="side.del3(f)" type="button" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span></button>
+									 </td>
+									<td><img ng-if="f.chamber!='house'" src = "http://cs-server.usc.edu:45678/hw/hw8/images/s.svg" style="height: 15px"><img ng-if="f.chamber=='house'" src = "http://cs-server.usc.edu:45678/hw/hw8/images/h.png" style="height: 15px">{{f.chamber}}</td>
+									<td>{{f.committee_id}}</td>
+									<td>{{f.name}}</td>
+									<td>{{f.parent_committee_id}}</td>
+									<td>{{f.subcommittee}}</td>
+								  </tr>
+								</tbody>
+							  </table>
+							</div>
+						</div>
+					</div>
+					</div>
+					<div class = "item">
+						<div ng-if="side.getNavBar() == 1" class="innerTab">
+							<div style="width: 100%; height: 50px; border-bottom: solid #E4E2DF;">
+								<div id = "detail">
+									<button type="button" class="btn btn-default" href="#fav" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></button>
+								</div>
+								<h3 style="display:inline-block; float: left">&nbsp;&nbsp;Details</h3>
+								<div id = "star">
+									<button ng-if = "element.isFavorite != 'yes'" ng-click="side.clickEmpty1()" type="button" class="btn btn-default"><span class="glyphicon glyphicon-star-empty"></span></button>
+									<button ng-if = "element.isFavorite == 'yes'" ng-click="side.clickFull1()" type="button" class="btn btn-default"><span class="glyphicon glyphicon-star" style = "color: yellow"></span></button>
+								</div>
+							</div>
+							<div class="row">
+								<div class = "col-xs-12 col-sm-12 col-md-5 col-lg-5">
+										<div>
+											<div class = "upperBorder">								
+												<img id= "bio" ng-src="https://theunitedstates.io/images/congress/original/{{element.bioguide_id}}.jpg">
+											</div>
+											<div style="display: inline-block">
+												<div class = "upperBorder">
+													{{element.title}}, {{element.last_name}}, {{element.first_name}}
+												</div>
+												<div class = "upperBorder">
+													<a href = "mailto: {{element.oc_email}}">{{element.oc_email}}</a>
+												</div>
+												<div class = "upperBorder">
+													Chamber: {{element.chamber}}
+												</div>
+												<div class = "upperBorder">
+													<a>Contact: {{element.phone}}</a>
+												</div>
+												<div ng-if = "element.party == 'R'" class = "upperBorder">
+													<img style = "height: 15px" ng-src = "{{element.url}}">Republican
+												</div>
+												<div ng-if = "element.party == 'D'" class = "upperBorder">
+													<img style = "height: 15px" ng-src = "{{element.url}}">Democrat
+												</div>
+											</div>		
+										</div>
+										<div class = "upperBorder" style = "height: 30px">
+											<span style = "float: left; font-weight:bold">Start Term</span>
+											<span>{{element.date_term_start | date:'mediumDate'}}</span>
+										</div>
+										<div class = "upperBorder" style = "margin-top: 20px">
+											<span style = "float: left; font-weight:bold">End Term</span>
+											<span>{{element.date_term_end | date:'mediumDate'}}</span>
+										</div>
+										<div class = "upperBorder" style = "margin-top: 20px; height: 30px">
+											<span style = "float: left; font-weight:bold">Term</span>
+											<div class="progress" style = "width: 50%; float: right; margin-top: 5px; margin-bottom: 5px">
+											   <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{element.progress}}%"
+											   aria-valuemin="0" aria-valuemax="100" style="width:{{element.progress}}%">
+													{{element.progress}}%
+											   </div>
+											</div>
+										</div>
+										<div class = "upperBorder" style = "margin-top: 20px">
+											<span style = "float: left; font-weight:bold">Office</span>
+											<span>{{element.office}}</span>
+										</div>
+										<div class = "upperBorder" style = "margin-top: 20px">
+											<span style = "float: left; font-weight:bold">State</span>
+											<span>{{element.state_name}}</span>
+										</div>
+										<div class = "upperBorder" style = "margin-top: 20px">
+											<span style = "float: left; font-weight:bold">Fax</span>
+											<span><a>{{element.fax}}</a></span>
+										</div>
+										<div class = "upperBorder" style = "margin-top: 20px">
+											<span style = "float: left; font-weight:bold">Birthday</span>
+											<span>{{element.date_birth | date:'mediumDate'}}</span>
+										</div>
+										<div class = "upperBorder" style = "margin-top: 20px">
+											<span style = "float: left; font-weight:bold">Social Links</span>
+											<span><a ng-if = "element.facebook_id" href="https://www.facebook.com/{{element.facebook_id}}" target="_blank"><img style="height: 20px" src="http://cs-server.usc.edu:45678/hw/hw8/images/f.png"></a>
+											<a ng-if = "element.twitter_id" href="https://www.twitter.com/{{element.twitter_id}}" target="_blank"><img style="height: 20px" src="http://cs-server.usc.edu:45678/hw/hw8/images/t.png"></a>
+											<a ng-if = "element.website" href="{{element.website}}" target="_blank"><img style="height: 20px" src="http://cs-server.usc.edu:45678/hw/hw8/images/w.png"></a></span>
+										</div>
+																
+								</div>
+								<div class = "col-xs-12 col-sm-12 col-md-5 col-lg-5">
+									<h1 style = "float:left">Committees</h1>
+									<table class = "table">
+										<thead>
+											  <tr>
+												<th>Chamber</th>
+												<th>Committee ID</th>
+												<th>Name</th>
+											  </tr>
+										</thead>
+										<tbody>
+											<tr dir-paginate="c in legi_coms				
+																| itemsPerPage: 5">
+												<td>{{c.chamber}}</td>
+												<td>{{c.committee_id}}</td>
+												<td>{{c.name}}</td>
+											</tr>
+										</tbody>
+										<dir-pagination-controls style="display:none"></dir-pagination-controls>
+									</table>
+									<h1 style = "float:left">Bills</h1>
+									<table class = "table">
+										<thead>
+											  <tr>
+												<th>Bill ID</th>
+												<th>Title</th>
+												<th>Chamber</th>
+												<th>Bill Type</th>
+												<th>Congress</th>
+												<th>Link</th>
+											  </tr>
+										</thead>
+										<tbody>
+											<tr dir-paginate="b in legi_bills | itemsPerPage: 5">
+												<td>{{b.bill_id}}</td>
+												<td>{{b.official_title}}</td>
+												<td>{{b.chamber}}</td>
+												<td>{{b.bill_type}}</td>
+												<td>{{b.congress}}</td>
+												<td><a href = "{{b.last_version.urls.pdf}}" target="_blank">Link</a></td>
+											</tr>
+										</tbody>
+
+									</table>
+									<dir-pagination-controls style="display:none"></dir-pagination-controls>
+									
+								</div>
+							</div>
+						</div>
+						<div ng-if="side.getNavBar() == 2" class="innerTab">
+							<div class = "innerTab">
+								<div style="width: 100%; height: 50px; border-bottom: solid #E4E2DF;">
+									<div id = "detail">
+										<button type="button" class="btn btn-default" href="#fav" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></button>
+									</div>
+									<h3 style="display:inline-block; float: left">&nbsp;&nbsp;Details</h3>
+									<div id = "star">
+										<button ng-if = "billsElement.isFavorite != 'yes'" ng-click="side.clickEmpty2(billsElement)" type="button" class="btn btn-default"><span class="glyphicon glyphicon-star-empty"></span></button>
+										<button ng-if = "billsElement.isFavorite == 'yes'" ng-click="side.clickFull2(billsElement)" type="button" class="btn btn-default"><span class="glyphicon glyphicon-star" style = "color: yellow"></span></button>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-11 col-sm-11 col-md-5 col-lg-5" style="display:inline-block">
+										<table class = "table">
+											<tbody>
+												<tr>
+													<td><b>Bill ID</b></td>
+													<td>{{billsElement.bill_id}}</td>
+												</tr>
+												<tr>
+													<td><b>Title</b></td>
+													<td>{{billsElement.official_title}}</td>
+												</tr>
+												<tr>
+													<td><b>Bill Type</b></td>
+													<td>{{billsElement.bill_type}}</td>
+												</tr>
+												<tr>
+													<td><b>Sponsor</b></td>
+													<td>{{billsElement.sponsor.title}}, {{billsElement.sponsor.last_name}}, {{billsElement.sponsor.first_name}}</td>
+												</tr>
+												<tr>
+													<td><b>Chamber</b></td>
+													<td>{{billsElement.chamber}}</td>
+												</tr>
+												<tr>
+													<td><b>Status</b></td>
+													<td>{{billsElement.history.active}}</td>
+												</tr>
+												<tr>
+													<td><b>Introduced On</b></td>
+													<td>{{billsElement.date_intro | date:'mediumDate'}}</td>
+												</tr>
+												<tr>
+													<td><b>Congress URL</b></td>
+													<td><a href="{{billsElement.urls.congress}}" target="_blank">URL</a></td>
+												</tr>
+												<tr>
+													<td><b>Version Status</b></td>
+													<td>{{billsElement.last_version.version_name}}</td>
+												</tr>
+												<tr>
+													<td><b>Bill URL</b></td>
+													<td><a href="{{billsElement.last_version.urls.pdf}}" target="_blank">Link</a></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="col-xs-11 col-sm-11 col-md-5 col-lg-5" style="display:inline-block">
+										<object height="400px" width="100%" type="application/pdf" data="{{billsElement.last_version.urls.pdf}}">
+												<p>It appears you don't have a PDF plugin for this browser. No biggie matter... you can <a href="{{billsElement.last_version.urls.pdf}}">click here to download the PDF file.</a></p>
+
+									   </object>
+									</div>
+								</div>
+							</div>						
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	  </div>
+  </body>
+</html>

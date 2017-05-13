@@ -1,0 +1,16 @@
+<html>
+    <head><title>Javascript to Avoid</title></head>
+    <body>
+        <h1>JavaScript to Avoid</h1>
+        <p>After a pause of a second or two you will see the affect of using document.write, namely all the previous text is replaced by the new text</p>
+        <script>
+        function simpleFunction () {
+        document.write("<h2>Result of using document.write is to eliminate all previous text</h2> ");
+        document.write("<h2>document.write may include <strong>some HTML</strong> and the browser will display the text and interpret the tags</h2>");
+        }
+        window.onload = function () {
+        setTimeout(simpleFunction, 3000);
+        }
+        </script>
+    </body>
+</html>
