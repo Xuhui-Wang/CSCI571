@@ -1,0 +1,32 @@
+<html>
+<!--
+<BODY>
+
+</BODY>
+-->
+<head>
+  <title>testing escape</title> 
+
+  <script language="JavaScript"> 
+
+    function printout(x)
+    { 
+      document.writeln("<PRE>"); 
+      document.writeln("Original input = " + x + "<BR>");
+      document.writeln("escape() of input = " + escape(x) + "<BR>"); 
+      document.writeln("unescape() of input = "+ unescape(x) + "<BR>");
+      document.writeln("<a href='../js_examples.html'>Return to main</a>");
+      document.writeln("</PRE></body></html>");     
+    }
+  </script> 
+</head>
+
+<body>
+  <H1>Testing Escape in JavaScript: please enter a string</h1> 
+  <form name="myform">
+    <input name="sample"><br> 
+    <input type="button" value="Enter" onClick="printout(myform.sample.value)">
+  </form>
+</body>
+
+</html>

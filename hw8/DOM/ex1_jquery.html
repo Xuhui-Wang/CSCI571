@@ -1,0 +1,31 @@
+<html>
+	<head>
+	<meta charset = "UTF-8">
+	<script src = "https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script>
+		$(function() {
+			$("#fadeText").click(function() {
+				$("h3").fadeOut(500).delay(800).fadeIn(125);
+			});
+		});
+	</script>
+	<style type = "text/css">
+		* {
+			padding: 0px;
+			margin: 0px;
+		}
+		.sample {
+			height: 40px;
+			min-height: 40px;
+			display: block;
+			width: 100%;
+		}
+	</style>
+	</head>
+	<body>
+		<div class="sample">
+			<h3>John slowly faded into view.</h3>
+		</div>
+		<button id="fadeText">Fade Text</button>
+	</body>
+</html>

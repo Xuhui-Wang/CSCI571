@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css" type="text/css" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js">
+		</script>
+	</head>
+	<body>
+		<h2>Text that will be red if screen width is less than 800px, mobile.css is used,
+		and text will be green if screen width is greater than 800px, style.css is used, and black if no style sheet is specified</h2>
+		<div id="browserInfo" style="padding:8px; border:1px solid blue; width:300px;"></div>
+		<script type="text/javascript">
+			$(document).ready(function(){  
+				resizeWindow();
+				$(window).bind('resize', resizeWindow);
+				getBrowserInfo();   
+			});
+			function resizeWindow()
+			{
+				$('#browserInfo').text('Browser (Width : ' + $(window).width() + ' , Height :' + $(window).height() + ' )');
+				var newWindowWidth = $(window).width();
+					  // If window width is below 800px, switch to the mobile stylesheet
+				if(newWindowWidth < 800){ 
+					$("link[rel=stylesheet]").attr({href : "mobile.css"});  
+				}
+							// Else if width is above 800px, switch to the large stylesheet
+				else //if(newWindowWidth >= 800)
+				{  
+					$("link[rel=stylesheet]").attr({href : "style.css"});
+				}    
+			}
+			function getBrowserInfo() {
+							$('#browserInfo').text('Browser (Width : ' + $(window).width() +
+			 ' , Height :' + $(window).height() + ' )');   
+			}
+		</script>
+	</body>
+</html>

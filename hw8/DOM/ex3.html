@@ -1,0 +1,13 @@
+<body>
+	<div id = "counter">Number of clicks = 0</div>
+	<form>
+		<input type = "button" value = "Increment Counter" onclick = "updateMessage()">
+	</form>
+	<script language = "JavaScript">
+		var hits = 0;
+		function updateMessage() {
+			hits += 1;
+			document.getElementById("counter").innerHTML = "Number of clicks = " + hits;
+		}
+	</script>
+</body>

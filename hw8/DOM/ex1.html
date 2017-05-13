@@ -1,0 +1,15 @@
+<html><head>
+<script language="JavaScript1.2">
+hex=255 // Initial color value.
+function fadetext() {
+ if(hex>0) { //If color is not black yet
+     hex -= 11; // increase color darkness
+     document.getElementById("sample").style.color="rgb("+hex+","+hex+","+hex+")";
+     setTimeout("fadetext()",200);   }
+  else   hex=255 //reset hex value   
+ }
+</script></head><body>
+<div id="sample" style="width:100%">
+<h3>John slowly faded into view</h3></div>
+<button onClick="fadetext()">Fade Text</button>
+</body></html>

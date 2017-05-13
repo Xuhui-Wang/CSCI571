@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>Hit Counter in JavaScript</title>
+		<script language = javascript src = "cookies.js">
+		</script>
+	</head>
+	<body>
+		<h2>This page demonstrates a hit counter in JavaScript.</h2>
+		<script language = javascript>
+			 var expire = new Date(2020,12,31); 
+			 var numHits = getCookie("hits"); 
+			 if (numHits)
+			 {//numHits is defined
+			   numHits = parseInt(numHits) + 1; 
+			   document.write("You have visited this site " + numHits + " times");
+			 } 
+			 else 
+			 {       
+			   numHits = 1; 
+			   document.write("Welcome, this is your first visit");
+			 } 
+			 setCookie("hits", numHits, expire);
+		</script>
+	</body>
+</html>

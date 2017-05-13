@@ -1,0 +1,45 @@
+<HTML>
+
+<HEAD>
+  <TITLE>Testing cookie retrieval</TITLE> 
+
+  <script language=javascript src=cookies.js></script>
+</HEAD> 
+
+<BODY>
+  <h3> 
+     <script language=javascript> 
+		function getCookie(cname) {
+			var name = cname + "=";
+			var ca = document.cookie.split(';');
+			for(var i=0; i<ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0)==' ') c = c.substring(1);
+				if (c.indexOf(name) != -1) {
+					return c.substring(name.length, c.length);
+				}
+			}
+			return "";
+		}
+//	alert(document.cookie);
+       var newColor=getCookie('personColor');
+       if (newColor) 
+			document.bgColor = newColor; 
+       else
+			document.writeln("<br>bgColor is not defined<br>");
+       
+	   var thename= getCookie('personName');
+       if (thename)
+			document.write("Welcome " + thename);
+       else
+			document.writeln("<br>personName is not defined<br>"); 
+
+       //Now, remove the cookie
+	   document.cookie = "personColor=; expires=Thu, 01 Jan 1970 00:00:00 UTC"; 
+	   document.cookie = "personName=; expires=Thu, 01 Jan 1970 00:00:00 UTC"; 
+     </script>
+   </h3>
+   <a href="setcookies.html">Try again</a>
+</BODY>
+
+</HTML>
