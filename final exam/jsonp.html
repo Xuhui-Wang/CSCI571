@@ -1,0 +1,27 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div id= "agenda"></div>
+        <script src="http://cs-server.usc.edu:27918/functions/data.json">  </script>
+        <script>
+            function listTasks(root) {
+            var feed = root.feed;
+            var entries = feed.entry;
+            var html = [''];
+            html.push('<ul>');
+            for (var i = 0; i < feed.entry.length; ++i) {
+            var entry = feed.entry[i];
+            var title = entry.title.$t;
+            var content = entry.content.$t;
+            html.push('<li>', title, ' (', content, ')  </li>');
+            }
+            html.push('</ul>');
+            document.getElementById("agenda").innerHTML =
+            html.join("");
+            }
+
+        </script>
+    </body>
+</html>

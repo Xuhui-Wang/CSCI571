@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Set Cookies</title>
+        <!--<script language = JavasScript src = "cookie.js"></script> -->
+        <script language="JavaScript">
+        	//cname: cookie name
+	       //cvalue: cookie value
+	       //expdays: the cookie expires after a certain number of days
+			function setCookie(cname, cvalue, exdays) {
+                //Create a cookie Example. Suppose we want to create a cookie variable "username" whose value is "John Smith"
+		        //document.cookie="username=John Smith; expires=Thu, 18 Dec 2018 12:00:00 UTC; path=/";
+                var d = new Date();
+                d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+                var expires = "expires = " + d.toUTCString();
+//				alert(expires);
+                document.cookie = cname + "=" + cvalue + ";" + expires;
+//				alert(document.cookie);
+            }
+            
+            function saveCookies()
+            {
+                // Remove any previous cookies
+	            //To delete a cookie, just set the expires parameter to a passed date:
+                document.cookie = "personColor = ; expires = Thu, 01 Jan 1970 00:00:00 UTC";
+                document.cookie = "personName = ; expires = Thu, 01 Jan 1970 00:00:00 UTC";
+                
+                var hisName = document.myform.yourname.value;
+                var hisColor;
+                if (document.myform.backg[0].checked) {
+                    hisColor = document.myform.backg[0].value; 
+                } else if (document.myform.backg[1].checked) {
+                    hisColor = document.myform.backg[1].value; 
+                }
+                setCookie('personName', hisName, 30);
+                setCookie('personColor', hisColor, 30);
+				//alert(document.cookie);
+                alert("personName = " + hisName + "\npersonColor = " + hisColor);
+                window.location = "handle_cookie.html";
+            }
+        </script>
+    </head>
+<body> 
+  <h2>Full Cookie Example</h2>
+  <FORM method="GET" name="myform"> 
+      What is your name: <input name="yourname" type="text" /><BR></BR>
+      Choose your background:<br> 
+      <input type=radio name="backg" value="green">green<br> 
+      <input type=radio name="backg" value="red">red<br> 
+      <input type="button" value="submit" onclick="saveCookies()"> 
+  </FORM>
+  <a href="http://cs-server.usc.edu:45678/examples.html#cookies">Return to main page</a>
+</body>
+</html>

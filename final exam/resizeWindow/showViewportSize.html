@@ -1,0 +1,46 @@
+<div style="background:#EEEEEE; position:absolute; top:2ex; padding:1ex; z-index:10;">
+  document.documentElement.clientWidth = 
+               <span id="clientWidth"></span><br />
+  window.innerWidth = <span id="innerWidth"></span><br/>
+    
+ screen.width = <span id = "screenWidth"></span>
+</div>
+
+<script type="text/javascript">
+function showViewportSize()	{
+  document.getElementById("clientWidth").innerHTML = document.documentElement.clientWidth;
+  document.getElementById("innerWidth").innerHTML = window.innerWidth;
+  document.getElementById("screenWidth").innerHTML = screen.width;
+  setTimeout("showViewportSize()", 1250); 
+}
+showViewportSize();
+//</script>
+
+<script>
+var req;
+
+function loadXMLDoc(url) {
+	req = false;
+    // branch for native XMLHttpRequest object
+    if(window.XMLHttpRequest) {
+    	try {   req = new XMLHttpRequest();
+        } catch(e) {  req = false;
+        }
+    // branch for IE/Windows ActiveX version
+    } else if(window.ActiveXObject) {
+       	try {
+        	req = new ActiveXObject("Msxml2.XMLHTTP");
+      	} catch(e) {
+        	try {  req = new ActiveXObject("Microsoft.XMLHTTP");
+        	} catch(e) {   req = false;
+        	}
+		}
+    }
+	if(req) {
+		req.onreadystatechange = processReqChange;  	
+		req.open("GET", url, true);		
+		req.send("");			
+	}
+}
+
+</script>

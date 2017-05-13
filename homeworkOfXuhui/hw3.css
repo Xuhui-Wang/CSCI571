@@ -1,0 +1,381 @@
+body {
+	background-image: url("http://cs-server.usc.edu:45678/hw/hw3/images/bg.png");
+	margin:0 auto;
+ 	width: 1300px;
+}
+
+h1 {
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+	font-size: 85px;
+	font-weight:700;
+}
+h3 {
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+	font-size: 40px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+}
+p.br {
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+	font-size : 35px;
+	font-weight: bold;
+}
+p.normal {
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+	font-size : 30px;
+	font-weight: 400;
+}
+p.small {
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+	font-size : 1.5em;
+}
+p.verysmall {
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+	font-size : 1.35em;
+}
+p.red {
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+	font-size : 1.5em;
+	color: #E03A46; 
+	font-weight: bold;
+}
+p.redBottom {
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+	font-size : 1.5em;
+	color: #E03A46; 
+	font-weight: bold;
+}
+p.redNormal {
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+	font-size : 30px;
+	color: #E03A46; 
+	font-weight: bold;
+}
+
+p.redNormalBottom {
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+	font-size : 30px;
+	color: #E03A46; 
+	font-weight: bold;
+}
+
+p#forblogroll{
+    font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+	font-size : 35px;
+	font-weight: bold;
+    margin-right: 880px;
+}
+tr.content:hover p.red{
+	color: #ff9900;
+}
+tr.content:hover p.redNormal{
+	color: #ff9900;
+}
+tr.content:hover, tr.content:hover span.t{
+	color: #ff9900;
+}
+
+tr.contentBottom:hover, tr.contentBottom:hover span.d{
+	color: #ff9900;
+}
+tr.contentBottom:hover p.redBottom {
+	color: #ff9900;
+}
+tr.contentBottom:hover p.redNormalBottom {
+	color: #ff9900;
+}
+table.invisible {
+	width: 750px;
+	line-height: 30px;
+}
+
+table.radius {
+	margin-left: 60px;
+	height: 100%;
+
+	color : #FFFFFF;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size : 1.5em;
+	font-weight: 400;
+}
+
+table.content {
+	padding-top: 35px;
+	padding-left: 80px;
+	width : 1200px;
+	height: 500px;
+}
+
+table.bottom {
+	width: 1300px;
+}
+tr.bottom {
+	height: 150px;
+}
+td#bottom1 {
+	width:275px;
+	padding-left: 30px;
+}
+td#bottom2 {
+	width: 100px;
+	padding-left: 40px;
+}
+td#bottom3 {
+	width: 900px;
+	padding-left:30px;
+}
+
+td.first {
+	border-top-left-radius:10px;
+	border-bottom-left-radius:10px;
+	background-color:#E03A46;
+	padding-left : 40px;
+	padding-right : 40px;
+}
+td.rest {
+	padding-left : 40px;
+	padding-right : 40px;
+
+}
+td.rest:hover {
+	background: #E03A46;
+}
+tr.small {
+	height: 80px;
+}
+td.small1 {
+	width: 70%;
+	vertical-align: bottom;
+}
+td.small2 {
+	width: 30%;
+	text-align: left;
+	vertical-align: bottom;
+}
+td.small3 {
+	width: 30%;
+	vertical-align: top;
+}
+
+tr.content {
+	height: 250px;
+}
+tr.content:hover {
+	background: #E03A46;
+}
+tr.contentBottom {
+	height: 250px;
+/*	border-top-color:#F8F6F0;*/
+}
+tr.contentBottom:hover {
+	background: #E03A46;
+}
+tr.blogroll2 {
+	height:20px;
+}
+
+td.br {
+	width: 350px;
+	text-align: left;
+}
+td.contentLeft {
+	vertical-align: top;
+	width: 160px;
+}
+/*
+td.contentLeft {
+    border-right-style: solid;
+    border-right-width: 3px;
+    border-right-color: #E03A46;
+}
+*/
+td.contentRight {
+	width: 400px;
+}
+
+td.contentLeftBottom {
+	border-top-style: solid;
+	border-top-width: 3px;
+	border-top-color:#F8F6F0;
+	vertical-align: top;
+	width: 160px;
+}
+
+td.contentRightBottom {
+	width: 400px;
+	border-top-style: solid;
+	border-top-width: 3px;
+	border-top-color:#F8F6F0;
+}
+
+div.label {
+	background-color: black;
+	height: 65px;
+	width: 1300px;
+	border-radius: 10px;
+}
+
+div.cover {
+	background-color : #FFFFFF;
+	width: 1300px;
+	height: 325px;
+	border-radius: 20px;
+	margin-top: 50px;
+}
+
+div.transparent {
+	width: 700px;
+	margin-left: 50px;
+	margin-top: 20px;
+	float:left;
+}
+
+div.blogroll {
+	width: 1300px;
+	margin-top: 70px;
+	float:left;
+}
+
+div.picture {
+	padding-left:800px;
+	width: 400px;
+	height: 170px;
+	margin-right: 50px;
+	padding-top: 50px;
+
+}
+div.content {
+	background-color : #FFFFFF;
+	width: 1300px;
+	height: 565px;
+	border-radius: 20px;
+	margin-top: 50px;
+}
+
+div.bottom {
+	width: 1300px;
+	height: 160px;
+	background-color: white;
+	border-radius: 20px;
+	margin-top: 300px;
+}
+a:link {
+	text-decoration:none;
+	color: #FFFFFF;
+}
+a:visited {
+	text-decoration:none;
+	color: #FFFFFF;
+}
+a:hover {
+	text-decoration:none;
+	color: #FFFFFF;
+}
+a:active {
+	text-decoration:none;
+	color: #FFFFFF;
+}
+
+img.displayed {
+	width: 400px;
+	height: 170px;
+	margin-left : auto;
+	margin-right: auto;
+	border-style: solid;
+	border-color: #EFEEEC;
+}
+
+img.media {
+	width: 25px;
+	height: 25px;
+}
+img#s{
+	width: 80px;
+	height: 80px;
+
+}
+span.t {
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+	font-size : 1.3em;
+	color: #E03A46; 
+	text-decoration: underline;
+}
+
+tr.content:hover #llt{
+	color: white;
+}
+
+
+tr.content:hover #llt2{
+	color: white;
+}
+
+tr.content:hover #llt3{
+	color: white;
+}
+span.d {
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+	font-size : 1.3em;
+	color: #E03A46; 
+	text-decoration: underline;
+}
+
+tr.contentBottom:hover #lld{
+	color: white;
+}
+
+
+tr.contentBottom:hover #lld2{
+	color: white;
+}
+
+tr.contentBottom:hover #lld3{
+	color: white;
+}
+
+p#doctor:hover {
+	background: #E03A46;
+}
+p#magazine:hover {
+	background: #E03A46;
+}
+p#spec:hover {
+	background: #E03A46;
+}
+div#fb:hover {
+	background: #E03A46;
+}
+div#twitter:hover {
+	background: #E03A46;
+}
+a.doctor {
+    color: black
+}
+p#doctor:hover a.doctor{
+	color: white
+}
+a.spec{
+	color: black;
+}
+p#spec:hover a.spec {
+	color:white;
+}
+a.magazine{
+	color: black;
+}
+p#magazine:hover a.magazine {
+	color:white;
+}
+a.fb{
+	color: black;
+}
+div#fb:hover a.fb {
+	color:white;
+}
+a.twitter{
+	color: black;
+}
+div#twitter:hover a.twitter {
+	color:white;
+}

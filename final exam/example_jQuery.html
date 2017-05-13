@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>multiple demo</title>
+  <style>
+  div, span, p {
+    width: 126px;
+    height: 60px;
+    float: left;
+    padding: 3px;
+    margin: 2px;
+    background-color: #eee;
+    font-size: 14px;
+  }
+  </style>
+</head>
+<body>
+ 
+<div>div</div>
+<p class="myClass">p class="myClass"</p>
+<p class="notMyClass">p class="notMyClass"</p>
+<span>span</span>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<div>
+    <h1>header 1</h1>
+    <h2>header 2</h2>
+    <h3>header 3</h3>
+    <h4>header 4</h4>
+</div>
+
+<script>
+$( "div, span, p.myClass" ).css( "border", "3px solid red" );
+$(":header").css({ background: "#ccc", color: "blue" });
+    
+$(window).load(function() {
+    $("body").css({background: "#ddd"});
+});
+</script>
+ 
+</body>
+</html>

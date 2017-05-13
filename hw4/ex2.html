@@ -1,0 +1,5 @@
+<INPUT ID="counter1" STYLE="position:relative; left:0px" TYPE="button" VALUE="Move Button" onclick="handleClick()"> 
+ <SCRIPT LANGUAGE="JavaScript"> 
+var obj = document.getElementById('counter1'); 
+var xlocation = parseInt(obj.style.left); alert(xlocation); 
+function handleClick() { xlocation += 50; document.getElementById('counter1').style.left = xlocation + "px"; } </SCRIPT>

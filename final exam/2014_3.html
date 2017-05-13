@@ -1,0 +1,22 @@
+<html><head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js">
+</script></head><body>
+<h2>Detecting Mobile Devices with JavaScript</h2>
+<div id="browserInfo" style="padding:8px; border:1px solid blue; width:300px;"></div>
+<script type="text/javascript">
+$(document).ready(function(){
+if(navigator.userAgent.match(/Android/i)){
+$('#browserInfo').text("Your device is Android");
+}
+else if(navigator.userAgent.match(/iPhone/i)){
+$('#browserInfo').text("Your device is iPhone");
+}
+else if(navigator.userAgent.match(/iPad/i)){
+$('#browserInfo').text("Your device is iPad");
+}
+else{
+$('#browserInfo').text("Your device is something else");
+}
+}
+);
+</script><noscript></body></html>
